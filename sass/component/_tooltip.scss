@@ -1,0 +1,139 @@
+/*tooltip-각주*/
+.tooltip.footnote{
+  display:flex;
+  max-width:1200px;
+  width:auto;
+  padding:12px 16px;
+  background-color:#fff;
+  box-shadow: 0px 1px 10px 0px #00000026;
+  border:1px solid #E1E1E1;
+  border-radius:4px;
+  font-family: "Pretendard";
+  opacity: 1 !important;
+}
+.tooltip.footnote span{
+  display:inline-block;
+  margin-right:4px;color:#00ABB6;
+}
+.tooltip.footnote .tooltip-inner{
+  display:flex;
+  width:100%;
+  max-width:100%;
+  background-color:#fff;
+  color:#4B4B4B;
+  text-align:left;
+  margin:0;
+  padding:0;
+}
+.tooltip.footnote .tooltip-arrow::before{
+  display:none;
+}
+
+.tooltip.footnote[class*="bs-tooltip-"] .arrow{
+  display:none;
+}
+
+/*tooltip-아이콘라벨*/
+.tooltip_label{
+  padding-top:0;
+  padding-bottom:0;
+}
+.tooltip_label .tooltip-inner{
+  width:max-content;
+  height:26px;
+  line-height:26px;
+  padding:0 8px;
+  margin:0 !important;
+  font-size:12px !important;
+  font-weight:300 !important;
+  color:#fff;
+  background-color:#4B4B4B;
+  border-radius: 4px;
+}
+.tooltip_label.show{
+  opacity: 1;
+  z-index:900;
+}
+
+.tooltip_label .arrow{
+  position:absolute;
+  width:5px;
+  height:5px;
+  display:block;
+  background:#4b4b4b;
+  transform: rotate(45deg);
+  left:50%;
+  margin-left:-2px;
+  top:-2px;
+}
+.tooltip[x-placement="top"].tooltip_label .arrow{
+  position:absolute;
+  width:5px;
+  height:5px;
+  display:block;
+  background:#4b4b4b;
+  transform: rotate(45deg);
+  left:50%;
+  margin-left:-2px;
+  top:23px;
+}
+
+.tooltip_label .arrow::before{
+  display:none;
+}
+.tooltip_label{
+  margin-top: 4px;
+  margin-bottom:4px;
+}
+.tooltip_label .tooltip-inner {
+  max-width:300px;
+  text-align:left;
+} 
+.tooltip_label.bs-tooltip-top .arrow{
+  top:19px;
+}
+
+/*목록전체열고닫기*/
+.ico{
+  position:relative;
+}
+.ico:hover [class*="tooltip_label"]{
+  display:block;
+}
+.tooltip_label_bot{
+  display:none;
+  width:-webkit-max-content;
+  width:-moz-max-content;
+  width:max-content;
+  height:26px;
+  line-height:26px;
+  padding:0 8px;
+  position:absolute;
+  left:50%;
+  bottom:-28px;
+  padding:0 4px;
+  margin:0 !important;
+  font-size:12px !important;
+  font-weight:300 !important;
+  color:#fff;
+  background-color:#4B4B4B;
+  border-radius: 4px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 910;
+  word-break: keep-all;
+}
+.tooltip_label_bot:after{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:50%;
+  width:5px;
+  height:5px;
+  background-color: #4b4b4b;
+  -webkit-transform:translateX(-50%) rotate(45deg);
+  -ms-transform:translateX(-50%) rotate(45deg);transform:translateX(-50%) rotate(45deg);
+}
+
+.tooltip.footnote{left:0; transform: translate3d(20px, auto, auto)}

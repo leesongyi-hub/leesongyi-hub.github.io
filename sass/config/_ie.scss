@@ -1,0 +1,32 @@
+@media all and (-ms-high-contrast:none){
+  
+  .dropdown-menu.dropdown-menu-right{
+    right:auto !important;
+    left:0 !important;
+  }
+  .mo .index_wrap.fix .txt_area.fold .txt_cont{
+    max-height: 50px;
+  }
+  input[type=file]{
+    top:-99999px;
+    left:-99999px;
+  }
+  .category_wrap.include_tab .category_tree .nodata{
+    width:auto !important;
+  }
+  .modal_attachments input[type=file]{
+    top:-99999px;
+    left:-99999px;
+  }
+  .add_tag_list{
+    -ms-flex:1;
+  }
+  .list_item.typeC .subInfo{display:-ms-flexbox !important;}
+
+  .result_wrap .preview_area{max-height:70px}
+  .result_wrap .list_item.type_file .preview_area{max-height:88px;}
+  .result_wrap .list_item.type_file .preview_area.on{max-height:100%;}
+
+  .modal .max_h700 .modal-body{min-height:164px;}
+  .modal .max_h700 .modal-body{max-height:564px;}
+}

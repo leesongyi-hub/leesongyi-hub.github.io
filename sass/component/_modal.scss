@@ -1,0 +1,69 @@
+.modal{overflow-y:auto;}
+
+/*모달사이즈*/
+.modal .modal-dialog.w400{max-width:400px;}
+.modal .modal-dialog.w460{max-width:460px;}
+.modal .modal-dialog.w600{max-width:600px;}
+.modal .modal-dialog.w700{max-width:700px;}
+.modal .modal-dialog.w800{max-width:800px;}
+.modal .modal-dialog.w900{max-width:900px;}
+.modal .modal-dialog.w900{max-width:900px;}
+.modal .modal-dialog.w1000{max-width:1000px;}
+.modal .modal-dialog.w1600{max-width:1600px;}
+
+/*모달커스텀*/
+.modal .btn-close{display:flex;position:absolute;top:32px;right:32px;}
+.modal .modal-dialog{margin-top:100px;}
+.modal .modal-content{border-radius:4px;border:none;}
+.modal .modal-header{display:block;padding:32px;border-bottom:none;}
+.modal .modal-body{padding:0 32px;}
+.modal .modal-footer{padding:32px;border-top:0;}
+.modal-footer .button{margin:0;margin-left:8px;}
+
+/*모달타입*/
+.modal.modal_type_alert .modal-content{min-height:300px;}
+.modal.modal_type_alert .modal-header{padding:16px 24px;border-bottom:1px solid #eee;}
+.modal.modal_type_alert .modal-body{padding:24px;}
+.modal.modal_type_alert .modal-footer{padding:16px 24px;border-top:1px solid #eee;}
+.modal.modal_type_alert .btn-close{top:20px;right:24px;}
+
+/*모달타입2*/
+.modal.modal_type2 .modal-content{min-height:300px;}
+.modal.modal_type2 .modal-header{padding:16px 24px;border-bottom:1px solid #eee;}
+.modal.modal_type2 .modal-body{padding:24px;}
+.modal.modal_type2 .modal-footer{padding:16px 24px;border-top:1px solid #eee;}
+.modal.modal_type2 .btn-close{top:15px;right:24px;}
+
+/*최대높이 700px*/
+// .modal .max_h700 .modal-content{max-height:700px;}
+.modal .max_h700 .modal-body{overflow-y:auto;max-height:564px;}
+
+/*브라우저얼럿컨펌대용*/
+.modal.modal_type_system .modal-dialog{margin:100px auto;}
+.modal.modal_type_system .tit{font-size:16px;font-weight:700;line-height:24px;}
+.modal.modal_type_system .modal-content{padding:24px 24px 16px 24px;}
+.modal.modal_type_system .modal-header{padding:0;width:calc(100% - 20px);min-height:24px;}
+.modal.modal_type_system .modal-body{padding:0;margin-top:8px;margin-bottom:32px;}
+.modal.modal_type_system .modal-footer{padding:0;}
+.modal.modal_type_system .btn-close{position:absolute;top:16px;right:16px;}
+
+
+/*모달 반응형*/
+@media all and (max-width:768px) {
+  .modal{padding-left:0 !important;}
+  .modal:not(.modal_type_system):not(.modal_type_alert) .modal-dialog{width:100%;max-width:100% !important;margin:0;border-radius:0;}
+  .modal:not(.modal_type_system):not(.modal_type_alert) .modal-content{height:100vh;border-radius:0;}
+  .modal:not(.modal_type_system):not(.modal_type_alert) .modal-header{padding:16px;}
+  .modal:not(.modal_type_system):not(.modal_type_alert) .modal-body{overflow-y:auto;padding:0 16px 32px;}
+  .modal:not(.modal_type_system):not(.modal_type_alert) .modal-footer{padding:8px 16px;}
+  .modal:not(.modal_type_system):not(.modal_type_alert) .btn-close{top:20px;right:20px;}
+
+  .modal.modal_type2 .modal-body{padding:24px !important;}
+
+  .modal .max_h700 .modal-content{max-height:100vh;}
+  .modal .max_h700 .modal-body{max-height:100%;}
+
+  .modal.modal_type_alert .modal-dialog{width:auto;margin:56px auto 0;}
+  .modal.modal_type_alert .modal-dialog.w600{max-width:600px;}
+  .modal.modal_type_alert .modal-content{height:auto;width:auto;margin:0 16px;border-radius:4px;}
+}

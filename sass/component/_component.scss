@@ -1,0 +1,32 @@
+
+/*
+    이미사용 중이라 정리 못한 CSS
+*/
+
+/* Color */
+.col_mint70{color:#00ABB6;}
+
+.bg_mint70{background-color:#00ABB6;}
+.bg_red{background-color:#E62E2E;}
+.bg_green{background-color:#47B881;}
+.bg_blue{background-color:#3B82F6;}
+.bg_yellow{background-color:#FFAD0D;}
+.bg_red10{background-color:#FEF2F2;}
+.bg_green10{background-color:#F2FAF6;}
+.bg_blue10{background-color:#EEF7FF;}
+
+/*간격*/
+.align_center{text-align: center}
+.ell1{overflow: hidden;white-space: nowrap;-o-text-overflow: ellipsis;text-overflow: ellipsis;word-break: break-all;}
+
+/*정렬*/
+.layout_flex{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.layout_flex.vertical_baseline{-webkit-box-align: baseline;-ms-flex-align: baseline;align-items: baseline;}
+.layout_flex.right{-webkit-box-pack: end;-ms-flex-pack: end;justify-content: end;}
+
+.count_wrap.justify-content-between .left{-webkit-box-flex:1;-ms-flex:1;flex:1;}
+
+.category_tree.type_open li > .tree{padding-left:0;}
+.category_tree.type_open li > .tree + ul > li > .tree{padding-left:16px;}
+
+.dropdown-menu{margin:8px 0 !important;}

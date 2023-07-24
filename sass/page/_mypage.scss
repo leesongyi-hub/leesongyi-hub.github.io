@@ -1,0 +1,28 @@
+.my_page main{padding:100px 40px 40px 40px;}
+.my_page h2{@include type-display}
+.my_page .content_head{display:flex;justify-content: space-between;align-items: center;} 
+
+.link a:hover{text-decoration:underline;}
+
+.toolbar{padding:24px 24px 12px 24px;background-color:$color-bg-default}
+.toolbar .label{line-height:30px;vertical-align: top;}
+.btn_comment{position:relative;}
+
+.my_page .table_wrap .table{table-layout: fixed;}
+.my_page .table_wrap .table .link a{@include ellipsis;display:block;width:100%;}
+
+@media all and (max-width:1023px) {  
+  .my_page .header .btn_filter{display:none;}
+  .my_page main{padding:148px 24px 40px 24px;}
+
+  .toolbar > .d-flex{margin-right:0 !important;}
+}
+
+@media all and (max-width:768px) {
+  .tabBtn button{width:80px;}
+  .my_page main{padding:186px 16px 40px 16px;}  
+  .toolbar{padding:16px 16px 4px 16px;}
+  .toolbar .label{width: 100%;}
+  .myPost .toolbar .radio_tab,
+  .myComment .toolbar .radio_tab{margin-bottom:8px;}
+}

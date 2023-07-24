@@ -1,0 +1,13 @@
+.treeComp li > .tree{display:inline-block;position:relative;padding:4px 0;margin-left:16px;}
+.treeComp li > .tree > a{position:relative;display:flex;width:100%;padding-right: 16px;font-size:13px;letter-spacing: -.4px;}
+.treeComp li > .tree > a span{display:inline-flex;}
+.treeComp li > .tree > a.checked{color:#00ABB6;font-weight:700;}
+
+.treeComp li > .tree > a .count{margin-left:4px;color:#8E8E8E;font-weight:400;}
+.treeComp li > .tree > a:hover{text-decoration: underline;}
+.treeComp li > .tree .btn_acco{display:inline-flex;align-items: center;justify-content: center;position:absolute;top: 50%;left:-22px;width:20px;height:20px;cursor: pointer;margin-top: -10px;}
+.treeComp li > .tree .btn_acco::before{width:14px;height:14px;}
+.treeComp li.on > .tree .btn_acco{-webkit-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);}
+
+.treeComp li > .tree + ul{display:none;margin-left:8px;}
+.treeComp li.on > .tree + ul{display:block;}

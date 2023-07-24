@@ -1,0 +1,229 @@
+
+/*
+    👉🏻 📂forms
+          form_cont > form_group > form_item > form_input
+*/
+.form_group .state_txt{font-size:12px;margin-top:4px;}
+.form_group.success .state_txt{color:$color-success;}
+.form_group.error .state_txt{color:$color-error;}
+
+.form_group.success .form_input{border-color:$color-success;}
+.form_group.error .form_input{border-color:$color-error;}
+
+input[type="file"]{position: absolute;width: 0;height: 0;padding: 0;overflow: hidden;border: 0;}
+.form-label{font-weight:500;margin-bottom:0;}
+.align-items-center .form-label{margin-top:2px}
+
+.form_input{width:200px;height:32px;line-height:31px;padding:0 12px;font-size:14px;border:1px solid $input-border-color;border-radius:$btn-radius-default;}
+.form_input::placeholder{color:$input-placeholder-text-color;}
+.form_input:hover{border:1px solid $input-hover-border-color !important;}
+.form_input:focus, .form-control:active{outline:2px solid $focus-color !important;border:1px solid $input-hover-border-color !important;-webkit-box-shadow: none !important;box-shadow: none !important;}
+.form_input:disabled{background-color:$input-disabled-bg-color !important;border:1px solid $input-disabled-border-color !important;color:$input-disabled-text-color !important;}
+
+input.form_input[readonly]{background-color:$input-readonly-bg-color !important;border:1px solid $input-border-color !important;color:$text-color-400 !important;}
+input.form_input[readonly]:focus, input.form_input[readonly]:active{outline:none !important;}
+
+.form_input.w700{max-width:500px;width:100%;min-width:200px;}
+.form_input.w240{max-width:240px;min-width:240px;width:100%;}
+.form_input.w100{max-width:100%;width:100%;}
+.form_input.w140{max-width:140px;width:140px;}
+
+/*select*/
+select {
+  border-radius:0;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+select::-ms-expand{
+	display:none
+}
+.form-select{background-color:#fff;background-image:url(../images/icon/ico_select-arr.svg);background-size:20px;padding-right:32px;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;background-repeat: no-repeat;background-position: center right 12px;}
+.form-select option:disabled{color:#CACACA;}
+
+/*
+  checkbox, radio
+  부트스트랩 커스텀
+*/
+.custom-control{
+  display:flex;
+  padding-left:0;
+
+  .custom-control-input{
+    width:20px;
+    height:20px;
+    top:0;
+    left:0;
+  }
+  .custom-control-label{
+    display:flex;
+    line-height:24px;
+  }
+  .custom-control-input:not(:disabled) ~ .custom-control-label{
+    cursor: pointer;
+  }
+  .custom-control-input:focus + .custom-control-label::before {
+    outline:2px solid $focus-color !important;
+    box-shadow: none;
+  }
+  .custom-control-input:not(:disabled) ~ .custom-control-label:hover::before{
+    border-color:$checkbox-hover-border-color; //비활성화 제외
+  }
+  .custom-control-input + .custom-control-label span{
+    margin-left:8px;
+  }
+}
+
+/*checkbox*/
+.custom-checkbox{
+  .custom-control-label::before{
+    position: static;
+    min-width:20px;
+    width:20px;
+    height:20px;
+    margin-top:2px;
+    border-color:$checkbox-border-color; 
+    border-radius: $btn-radius-default; 
+  }
+  .custom-control-label::after{
+    display:none;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after{
+    background-image: none;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11' fill='none'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M13.53.97a.75.75 0 0 1 0 1.06l-8.25 8.25a.75.75 0 0 1-1.06 0L.47 6.53a.75.75 0 0 1 1.06-1.06l3.22 3.22L12.47.97a.75.75 0 0 1 1.06 0Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before{
+    border-color:$checkbox-checked-border-color;
+    background-color:$checkbox-checked-bg-color;
+  }
+  .custom-control-input:checked ~ .custom-control-label:hover::before{
+    background-color:$checkbox-checked-hover-bg-color;
+  }
+  .custom-control-input:disabled ~ .custom-control-label{
+    color:$checkbox-disabled-text-color;
+  }
+  .custom-control-input:disabled ~ .custom-control-label::before{
+    border-color:$checkbox-disabled-border-color;
+    background-color:$checkbox-disabled-bg-color;
+  }
+  .custom-control-input:disabled:checked ~ .custom-control-label::before{
+    border-color:$checkbox-checked-disabled-bg-color;
+    background-color:$checkbox-checked-disabled-border-color;
+  }
+}
+
+/*radio*/
+.custom-radio{
+  .custom-control-label::before{
+    position: static;
+    min-width:20px;
+    width:20px;
+    height:20px;
+    margin-top:2px;
+    border-color:$checkbox-border-color; 
+    border-radius: $btn-radius-circle; 
+  }
+  .custom-control-input ~ .custom-control-label::after{
+    display:none;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after{
+    display:block;
+    width:10px;
+    height:10px;
+    background-image: none;
+    background-color:$radio-checked-bg-color;
+    border-radius: $btn-radius-circle;
+    left:5px;
+    top:7px;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before{
+    border-color:#ddd;
+    background-color:#fff;
+  }
+  .custom-control-input:checked ~ .custom-control-label:hover::before{
+    border-color:$radio-hover-border-color;
+  }
+  .custom-control-input:checked ~ .custom-control-label:hover::after{
+    background-color:$radio-checked-hover-bg-color;
+  }
+  .custom-control-input:disabled ~ .custom-control-label{
+    color:$radio-disabled-text-color;
+  }
+  .custom-control-input:disabled ~ .custom-control-label::before{
+    border-color:$radio-disabled-border-color;
+    background-color:$radio-disabled-bg-color;
+  }
+  .custom-control-input:disabled:checked ~ .custom-control-label::before{
+    border-color:$radio-checked-disabled-border-color;
+    background-color:$radio-checked-disabled-bg-color;
+  }
+  .custom-control-input:disabled:checked ~ .custom-control-label::after{
+    display:block;
+    background-color:$radio-disabled-border-color;
+  }
+}
+
+/*align*/
+.custom-control + .custom-control{margin-left:16px;}
+.block .custom-control + .custom-control{margin-left:0;}
+
+/*textarea*/
+textarea.form-control{padding:12px;font-size:14px;border:1px solid $input-border-color;border-radius:4px;resize: none;}
+textarea.form-control:focus, textarea.form-control:active{outline:2px solid $focus-color;border:1px solid $focus-color;-webkit-box-shadow: none;box-shadow: none;}
+textarea.form-control:disabled{background-color:$input-disabled-bg-color;}
+textarea.form-control::placeholder{color:$input-placeholder-text-color;}
+textarea.form-control[readonly]{background-color:$input-readonly-bg-color;}
+textarea.form-control[readonly]:focus, textarea.form-control[readonly]:active, textarea.form-control:disabled{border-color: $input-border-color !important;outline:none !important;outline: none !important;}
+
+/* 라디오버튼그룹 커스텀 */
+.radio_tab{display:inline-flex;height:32px;border:1px solid $color-border-default;border-radius: 4px;background-color:#fff;}
+.radio_tab .custom-control + .custom-control{margin:0;}
+.radio_tab .custom-control-label::before{display:none !important;}
+.radio_tab .custom-control-label::after{display:none !important;}
+.radio_tab .custom-control .custom-control-input + .custom-control-label{padding:0 12px;line-height:32px;color:$text-color-800}
+.radio_tab .custom-control .custom-control-input + .custom-control-label span{margin-left:0;}
+.radio_tab .custom-control .custom-control-input:checked + .custom-control-label{color:$text-color-400;outline:1px solid $color-border-dark !important;border-radius: 4px;}
+
+/* date input */
+.dateInput_area{position:relative;}
+.dateInput_area .form_input{padding-right:32px;}
+.dateInput_area button{position:absolute;top:6px;right:8px;}
+.dateInput_area + .spacing{display:inline-block;margin:0 8px;line-height:32px;}
+
+/*반응형*/
+@media all and (max-width:768px) {
+  .custom-control + .custom-control{margin-left:12px;}
+
+  .form_group_wrap{-webkit-box-align:end !important;-ms-flex-align:end !important;align-items:end !important;}
+  .form_group{-webkit-box-align:end !important;-ms-flex-align:end !important;align-items:end !important;-ms-flex-wrap: wrap;flex-wrap: wrap;}
+  .form_group_wrap.flex-nowrap .form_group{-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;}
+  .form_group .form-label{width:100%;}
+  .form_group_wrap .button{-ms-flex-negative:0;flex-shrink:0;}
+
+  .form_group_wrap .form_group{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;-ms-flex-negative:1;flex-shrink:1;}
+  .form_group .form_input{margin-left:0;width:100%;max-width:100%;}
+
+  .form_group .form-label{display:block;}
+  
+  .form_input{width:100%;min-width:auto !important;-ms-flex-preferred-size: 100%;flex-basis: 100%;-webkit-box-flex:1;-ms-flex:1;flex:1}
+  .form_input.form-select{width:auto;-ms-flex-preferred-size: 100%;flex-basis: 100%;-webkit-box-flex:1;-ms-flex:1;flex:1}
+}
+
+@media all and (max-width:480px) {
+  .form_group_wrap{-ms-flex-wrap: wrap;flex-wrap: wrap;}
+  
+  .form_group_wrap.col2 > *{margin-bottom:8px;}
+  .form_group_wrap.col2 > *:last-child{margin-bottom:0}
+  .form_group_wrap.col2 .form_group{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;}
+  .form_group_wrap.col2 > .button{width:100%;}
+
+  .dateInput_area .form_input{width:120px !important;}  
+}
+
+@media all and (max-width:360px) {
+  .radio_tab .custom-control .custom-control-input + .custom-control-label{padding:0 8px;}
+}

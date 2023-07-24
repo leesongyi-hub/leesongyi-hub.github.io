@@ -1,0 +1,8 @@
+/*슬라이드*/
+.carouselSlider_pagenation{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.carouselSlider_pagenation .count{display:inline-block;min-width:42px;text-align:center;color:#CACACA;font-weight:400;}
+.carouselSlider_pagenation .count .current{color:#4b4b4b}
+.carouselSlider_pagenation .button{display:inline-block;width:32px;height:32px;border-radius: 4px;border:1px solid #eee;}
+.carouselSlider_pagenation .button::before{content:'';display:inline-block;width:100%;height:100%;background-repeat: no-repeat;background-image: url(../images/icon/ico_paging-arr.svg);}
+.carouselSlider_pagenation .prev::before{-webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg)}
+.carouselSlider_pagenation .button.disabled{opacity: .4;background-color:#fff;}

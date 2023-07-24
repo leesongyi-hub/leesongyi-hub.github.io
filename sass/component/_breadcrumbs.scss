@@ -1,0 +1,5 @@
+.breadcrumbs ul{display:flex;align-items: center;}
+.breadcrumbs li{display:flex;align-items: center;color:$text-color-800;}
+.breadcrumbs li.current{color:$text-color-100;}
+.breadcrumbs li::after{content:'';display:inline-block;width:16px;height:16px;margin:0 4px;background-image:url(../images/icon/ico_arr.svg);background-size:100%;}
+.breadcrumbs li:last-child:after{display:none;}

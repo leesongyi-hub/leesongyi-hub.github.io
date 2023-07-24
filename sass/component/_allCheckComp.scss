@@ -1,0 +1,6 @@
+.allCheck_list.all{padding-left:0;}
+.allCheck_list{display: flex;justify-content: space-between;align-items: baseline;margin-bottom:6px;padding-left:16px;}
+.allCheck_list:hover{background-color:$color-bg-default;}
+.allCheck_list:last-child{margin-bottom:0;}
+.allCheck_list.disabled button{pointer-events: none;}
+.allCheck_list.disabled i{color:$icon-color-disabled;}

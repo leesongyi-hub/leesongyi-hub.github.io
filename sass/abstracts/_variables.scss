@@ -1,0 +1,166 @@
+/*base-color는 다른 변수에 재할당하여 사용*/
+$base-color-white: #ffffff;
+$base-color-black: #000000;
+
+$base-color-gray-5:#FAFAFA;
+$base-color-gray-10:#F5F5F5;
+$base-color-gray-20:#EEEEEE;
+$base-color-gray-30:#E1E1E1;
+$base-color-gray-40:#CACACA;
+$base-color-gray-50:#8E8E8E;
+$base-color-gray-60:#4B4B4B;
+$base-color-gray-70:#1F1F1F;
+
+$base-color-primary-5:#F9FFFF;
+$base-color-primary-10:#EEFCFC;
+$base-color-primary-20:#DFF7F7;
+$base-color-primary-30:#B0EBEC;
+$base-color-primary-40:#7DDDE1;
+$base-color-primary-50:#47CFD6;
+$base-color-primary-60:#15C5CE;
+$base-color-primary-70:#00ABB6;
+
+$base-color-yellow-60:#FFAD0D;
+$base-color-yellow-40:#FFDD82;
+$base-color-yellow-10:#FFF9EA;
+
+$base-color-blue-60:#3B82F6;
+$base-color-blue-10:#F2F9FF;
+
+$base-color-red-60:#E62E2E;
+$base-color-red-10:#FEF2F2;
+
+$base-color-green-60:#47B881;
+$base-color-green-10:#F2FAF6;
+
+/*==========================================================*/
+
+//iconColor
+$icon-color-primary:$base-color-primary-60;
+$icon-color-default:$base-color-gray-50;
+$icon-color-lightgray:$base-color-gray-40;
+$icon-color-darkgray:$base-color-gray-70;
+$icon-color-disabled:$base-color-gray-20;
+
+
+//textColor
+$text-color-primary:$base-color-primary-70;
+$text-color-100:$base-color-gray-70;
+$text-color-400:$base-color-gray-60;
+$text-color-800:$base-color-gray-50;
+$text-color-link:$base-color-primary-70;
+$text-color-light:$base-color-gray-40;
+
+//etcColor
+$color-white: $base-color-white;
+$color-black: $base-color-black;
+$color-mark : $base-color-yellow-40;
+$color-primary: $base-color-primary-60;
+$color-required: $base-color-red-60;
+$color-error: $base-color-red-60;
+$color-success: $base-color-green-60;
+$color-info: $base-color-blue-60;
+$color-warning: $base-color-yellow-40;
+
+//bgColor
+$color-bg-light:$base-color-gray-5;
+$color-bg-default:$base-color-gray-10;
+$color-bg-dark:$base-color-gray-20;
+
+//borderColor
+// $color-border-darker
+$color-border-dark:$base-color-gray-50;
+$color-border-dark-light:$base-color-gray-40;
+$color-border-dark-lighter:$base-color-gray-30;
+$color-border-default:$base-color-gray-20;
+$color-border-light:$base-color-gray-10;
+$color-border-primary:$color-primary;
+
+//btn
+$btn-radius-default:4px;
+$btn-radius-circle:50%;
+
+$btn-primary-bg-color:$color-primary;
+$btn-primary-bg-hover-color:$base-color-primary-50;
+$btn-primary-border-color:$color-primary;
+$btn-primary-border-hover-color:$base-color-primary-50;
+$btn-primary-text-color:$color-primary;
+$btn-primary-disabled-bg-color:$base-color-gray-30;
+$btn-primary-disabled-border-color:$base-color-gray-30;
+$btn-primary-icon-color:$color-white;
+
+$btn-secondary-bg-color:$color-white;
+$btn-secondary-border-color:$color-primary;
+$btn-secondary-text-color:$color-primary;
+
+$btn-outline-bg-color:$color-white;
+$btn-outline-bg-hover-color:$base-color-gray-10;
+$btn-outline-border-color:$base-color-gray-20;
+$btn-outline-text-color:$base-color-gray-60;
+$btn-outline-disabled-bg-color:$color-white;
+$btn-outline-disabled-border-color:$base-color-gray-20;
+$btn-outline-disabled-text-color:$base-color-gray-40;
+$btn-outline-icon-color:$base-color-gray-40;
+
+$btn-focus-color:$base-color-primary-30;
+
+//shadow
+$shadow-default:0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+$shadow-sm:0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+
+//forms
+//폼-상태-액션-속성-값
+$focus-color:$base-color-primary-30;
+
+$checkbox-border-color: $base-color-gray-30;
+$checkbox-hover-border-color: $base-color-primary-70;
+
+$checkbox-checked-bg-color: $color-primary;
+$checkbox-checked-border-color: $base-color-primary-70;
+$checkbox-checked-hover-bg-color: $base-color-primary-70;
+
+$checkbox-checked-disabled-bg-color: $base-color-gray-40;
+$checkbox-checked-disabled-border-color:$base-color-gray-40;
+
+$checkbox-disabled-bg-color: $base-color-gray-10;
+$checkbox-disabled-border-color:$base-color-gray-30;
+$checkbox-disabled-text-color:$base-color-gray-40;
+
+$radio-border-color: $base-color-gray-30;
+$radio-hover-border-color: $base-color-primary-70;
+
+$radio-checked-bg-color: $color-primary;
+$radio-checked-border-color: $base-color-primary-70;
+$radio-checked-hover-bg-color: $base-color-primary-70;
+
+$radio-checked-disabled-bg-color: $base-color-gray-10;
+$radio-checked-disabled-border-color:$base-color-gray-30;
+
+$radio-disabled-bg-color: $base-color-gray-10;
+$radio-disabled-border-color:$base-color-gray-30;
+$radio-disabled-text-color:$base-color-gray-40;
+
+$input-border-color: $base-color-gray-30;
+$input-hover-border-color: $base-color-primary-60;
+$input-placeholder-text-color:$base-color-gray-50;
+$input-readonly-bg-color:$base-color-gray-5;
+$input-disabled-bg-color:$base-color-gray-10;
+$input-disabled-border-color:$base-color-gray-20;
+$input-disabled-text-color:$base-color-gray-40;
+
+//table
+$table-cell-bg-color:$base-color-gray-5;
+$table-cell-border-color:$base-color-gray-10;
+$table-hover-bg-color:$base-color-gray-10;
+
+//pagination
+$paging-hover-bg-color:$base-color-gray-10;
+$paging-active-bg-color:$base-color-primary-10;
+$paging-active-text-color:$base-color-primary-70;
+
+//chips
+$chips-bg-color:$base-color-gray-10;
+$chips-border-color:$base-color-gray-10;
+$chips-active-bg-color:$base-color-primary-10;
+$chips-active-border-color:$base-color-primary-60;
+$chips-active-text-color:$base-color-primary-70;

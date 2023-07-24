@@ -1,0 +1,26 @@
+/* 필수정보 표시 */
+.essential{
+  position:relative;
+}
+.essential::before{
+  content:'*';
+  position:absolute;
+  top:-2px;
+  left:-10px;
+  display:inline-block;
+  color:$color-required;
+}
+
+@media all and (max-width:480px) {
+  .essential::before{
+    display:none;
+  }
+  .essential::after{
+    content:'*';
+    position:absolute;
+    top:-2px;
+    right:-10px;
+    display:inline-block;
+    color:$color-required;
+  }
+}

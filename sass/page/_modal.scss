@@ -1,0 +1,101 @@
+
+/* 모달 기본설정 */
+.modal{padding-right:0 !important;}
+
+/* 모달 - 주요항목 설정 */
+.main_page .category_wrap .category_tree{position:relative;min-width:auto;width:100%;min-height: auto;padding:0;border:0;background-color: transparent;overflow: visible;white-space: normal;}
+.main_page .category_wrap .category_tree li > .tree{display:block;position:relative;padding-left:24px;margin-bottom:6px;}
+.main_page .category_wrap .category_tree li > .tree + ul{display:none;}
+.main_page .category_wrap .category_tree li > .tree + ul > li > .tree{padding-left:40px;}
+.main_page .category_wrap .category_tree li > .tree:hover{background-color:$color-bg-default;}
+.main_page .category_wrap .category_tree li > .tree .btn_acco{display:flex;align-items:center;justify-content: center;position:absolute;top: 13px;left:0px;width:20px;height:20px;cursor: pointer;margin-top: -10px;}
+.main_page .category_wrap .category_tree li > .tree .btn_acco::before{width:14px;height:14px;}
+.main_page .category_wrap .category_tree li.on > .tree + ul{display:block;}
+.main_page .category_wrap .category_tree li.on > .tree .btn_acco{-webkit-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);}
+
+/* 모달 - 정렬 설정 */
+.modal_sortSet .select_area{flex:1;margin-right:20px;}
+.modal_sortSet .select_area .form-select{width:50%;}
+.modal_sortSet button i{overflow: hidden;}
+
+/* 모달 - 새글쓰기 */
+.view_tree{overflow-y:auto;}
+.view_tree ul{margin-left:20px;}
+.view_tree p{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;padding:6px 12px 6px 0;line-height:20px;}
+.view_tree p span{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:8px;}
+.view_tree p em{text-indent:0;}
+.view_tree p em i{position:relative;top:3px;margin-left:4px;}
+
+.docSubject_area{position:relative;}
+.docSubject_area .custom-checkbox{position:absolute;top:0;right:0;}
+.template_list > ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -8px 0;}
+.template_listItem{width:calc(33.333% - 16px);margin:0 8px 24px 8px;text-align:right;}
+.template_listItem .list_item{display:block;border:1px solid #eee;}
+.template_listItem .list_item.on{border:2px solid #15C5CE;}
+.template_listItem .list_item:hover{box-shadow:0px 1px 10px rgb(0 0 0 / 15%);}
+.template_listItem .list_item{display:block;}
+.template_listItem .list_item .tit{padding:8px;font-size:14px;font-weight:500;line-height:170%;text-align:center;background-color:#FAFAFA;border-bottom:1px solid #eee;}
+.template_listItem .list_item .view_tree{overflow-y: auto;height:160px;padding:10px 0;text-align:left;}
+.btn_tempDetail{display: inline-flex;width:34px;height:34px;min-width:34px;align-items: center;justify-content: center;border-radius: $btn-radius-circle;background-color:$color-bg-default;}
+
+.addDocument .modal-footer{position:fixed;bottom:0;right:0;width:100%;padding:32px;background-color:#fff;border-top:0;}
+.modal_createDoc .modal-footer{padding-top:8px;}
+
+.addDocument .state_txt{display:none;}
+.addDocument .success .state_txt, .addDocument .error .state_txt{display:block;}
+
+  @media all and (max-width: 768px) {
+    .template_listItem{width:calc(50% - 16px);}
+  }
+  @media all and (max-width: 480px) {
+    .template_listItem{width:calc(100% - 16px);}
+  }
+
+/* 모달 - 새글쓰기 > 상세보기 */
+.modal_tempDetail .template_listItem{width:100%;}
+.modal_tempDetail .template_list .list_item .view_tree{height:auto;max-height:440px;}
+.modal_tempDetail .template_listItem{margin:0 0 32px 0;}
+.modal_tempDetail .template_listItem .list_item:hover{box-shadow: none;}
+
+  @media all and (max-width: 768px) {
+    .modal_tempDetail .template_listItem{margin-bottom:0;}
+    .modal_tempDetail .template_list .list_item .view_tree{max-height: 100% !important;}
+  }
+
+/* 모달 - 필드수정 */
+.modal_editField .modal-dialog{max-width:1600px;padding:0 24px;}
+.modal_editField .custom-control .custom-control-label{white-space: nowrap;}
+.modal_editField .form_input.w240{min-width:240px !important;}
+
+  @media all and (max-width: 768px) {
+    .modal_editField .modal-dialog{padding:0;}
+  }
+
+/* 모달 - 복사 */
+.modal_copy .txt_warning{display:flex;color:$color-error;}
+
+  @media all and (max-width:768px) {
+    .modal_copy .form_group .form-label{width:100% !important;}
+  }
+
+/* 모달 - 문서분류 설정 */
+.modal_editCategory .category_wrap .category_content{height:auto;min-height:540px;overflow-y:auto;border:1px solid #eee;border-left:none;}
+.modal_editCategory .category_wrap .category_content .dou_list{padding:16px;border-bottom:1px solid $color-border-light;}
+.modal_editCategory .category_wrap .select_dou_list{padding:16px;}
+
+  @media all and (max-width: 768px) {  
+    .modal_editCategory .category_wrap.scrollY {display: block !important;height: auto;}
+    .modal_editCategory .category_wrap.scrollY .category_content {border: 0;padding: 16px 0;}
+    .modal_editCategory .category_wrap .category_tree {width: 100% !important;max-height: 260px!important;min-height: 260px!important;}
+    .modal_editCategory .category_wrap .category_content {padding: 0;}
+    .modal_editCategory .category_wrap .category_content .dou_list{padding:16px 0;}
+    .modal_editCategory .category_wrap .select_dou_list{padding:16px 0;}
+
+    .modal_editCategory .category_wrap .category_content{min-height:100%;padding:0 !important;}
+  }
+
+/* 모달 - 파일다운로드 */
+  @media all and (max-width: 768px) {
+    .form_group .form-label{width:100% !important;}
+    .form-select.w140{min-width:140px !important;}
+  }

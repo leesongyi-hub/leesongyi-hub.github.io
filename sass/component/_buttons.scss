@@ -1,0 +1,51 @@
+/*button - reset*/
+button:focus,
+button[type="button"]:focus,
+button[type="reset"]:focus,
+button[type="submit"]:focus{outline:none;-webkit-box-shadow: none;box-shadow: none;}
+
+button:focus-visible,
+button[type="button"]:not(.disabled):focus-visible,
+button[type="reset"]:not(.disabled):focus-visible,
+button[type="submit"]:not(.disabled):focus-visible{outline:2px solid $btn-focus-color;}
+
+/*button - type*/
+.button{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:$btn-radius-default;cursor: pointer;-ms-flex-negative: 0;flex-shrink: 0;}
+.button.primary{color:#fff;border:1px solid $btn-primary-border-color;background-color:$btn-primary-bg-color;}
+.button.secondary{color:$btn-secondary-text-color;border:1px solid $btn-secondary-border-color;background-color:$btn-secondary-bg-color;}
+.button.outline{color:$btn-outline-text-color;border:1px solid $btn-outline-border-color;background-color:$btn-outline-bg-color;}
+.button.disabled{color:#fff;border:1px solid #e1e1e1;background-color:#e1e1e1;cursor:default}
+
+/*button - state*/
+.button.primary:hover{color:#fff;border:1px solid $btn-primary-border-hover-color;background-color:$btn-primary-bg-hover-color;}
+.button.primary.disabled{color:#fff;border:1px solid $btn-primary-disabled-border-color;background-color:$btn-primary-disabled-bg-color;cursor:default}
+
+.button.outline:hover{background-color:$btn-outline-bg-hover-color;}
+.button.outline.disabled{color:$btn-outline-disabled-text-color;border:1px solid $btn-outline-disabled-border-color;background-color:$btn-outline-disabled-bg-color;}
+
+/*button - size*/
+.sm{min-width:55px;height:24px;line-height:24px;padding:0 6px;font-size:12px;}
+.md{min-width:49px;height:32px;line-height:32px;padding:0 8px;}
+.lg{min-width:96px;height:40px;line-height:40px;padding:0 24px;}
+
+.icoOnly{display:inline-flex;align-items: center;justify-content: center;}
+.icoOnly.sm{min-width:auto;width:24px;height:24px;line-height:24px;padding:0;}
+.icoOnly.md{min-width:auto;width:32px;height:32px;line-height:32px;padding:0;}
+.icoOnly.lg{min-width:auto;width:40px;height:40px;line-height:40px;padding:0;}
+
+/*아이콘색상*/
+.button.primary i{color:$btn-primary-icon-color;}
+.button.outline i{color:$btn-outline-icon-color;}
+
+/*button - layout*/
+.button .label{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;}
+.button i + .label{margin-left:4px;}
+.button .label + i{margin-left:4px;}
+
+/*sort 버튼*/
+.btn_sort_box{display:inline-block;width:14px;}
+.btn_sort_box button{display: -webkit-box;display: -ms-flexbox;display: flex;width:12px;height:5px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
+.btn_sort_box button::before{content:'';display:inline-block;width: 0px;height: 0px;border-top:5px solid none;border-bottom:5px solid #CACACA;border-right: 5px solid transparent;border-left: 5px solid  transparent;}
+.btn_sort_box button.up{margin-bottom:4px;}
+.btn_sort_box button.down{margin-top:4px;-webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg);}
+.btn_sort_box button.on::before{border-bottom-color: #828282;}

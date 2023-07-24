@@ -1,0 +1,16 @@
+/*페이징*/
+.pagination{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;}
+.pagination ul{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.pagination .page_item{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;min-width:30px;width:30px;height:30px;margin:0 2px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;}
+.pagination .page_item .page_link{width:100%;height:100%;line-height:30px;border-radius: 4px;font-size:12px;background-color: transparent;}
+.pagination .page_item .page_link:hover{background-color:$paging-hover-bg-color;}
+.pagination .page_item.on .page_link{color:$paging-active-text-color;background-color:$paging-active-bg-color;}
+
+.pagination .ico{background-position:center;background-repeat: no-repeat;}
+.pagination .ico.disabled{cursor:default;}
+.pagination .ico.disabled:hover{background-color: transparent;}
+.pagination .ico.disabled::before{opacity:.2;}
+.pagination .ico.btn_start::before{background-image: url(../images/icon/ico_paging-arr-end.svg);-webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg);}
+.pagination .ico.btn_prev::before{background-image: url(../images/icon/ico_paging-arr.svg);-webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg)}
+.pagination .ico.btn_next::before{background-image: url(../images/icon/ico_paging-arr.svg);} 
+.pagination .ico.btn_end::before{background-image: url(../images/icon/ico_paging-arr-end.svg);}

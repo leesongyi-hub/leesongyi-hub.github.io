@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/search.css">
+
+	<script src="../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+		.pub_list header{
+			position: fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:48px;
+			background-color:#15C5CE;
+			padding:0 20px;
+			color:#fff;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			z-index:100;
+		}
+		.pub_list .tit{
+			color:#fff;
+		}
+    #wrap {
+      position: relative;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 80px 20px 20px 20px;
+      min-width: 1280px;      
+      margin: 0 auto;
+    }
+    caption {
+      display: none;
+    }
+    table {
+      width: 100%;      
+      margin: 0 auto 60px;
+      font-size: 1.5rem;
+      border-collapse: collapse;
+      background-color: #fff;      
+      color: #555;
+    }
+    th {
+      font-size: 15px;
+      color: #fff;
+      font-weight: 500;
+      border: 0;
+      background-color: #f5f6f7;
+			border-top:1px solid rgba(0,0,0,0.08);
+			border-right:1px solid rgba(0,0,0,0.05);
+			text-align: center;
+			color:#666;
+    }
+    td {
+      padding: 2px 16px;
+      font-size: 14px;
+      font-weight: 400;
+      border-top: 1px solid #ededed;
+      background-color: #fff;
+      border: 1px solid #ededed;      
+    }
+    td[rowspan] {      
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    .link {
+      letter-spacing: 0.03em;
+      font-weight: 500;
+			color:#0068c3 !important;
+			text-decoration: underline;
+    }
+    .link:hover {
+			color:#0068c3 !important;
+			text-decoration: underline;
+    }
+    .update {
+      display: inline-block;
+      margin: 18px 0 30px 0;
+      padding: 18px 26px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 1.95rem;
+      border: 1px solid #888;
+      background: #fff;
+    }
+
+    .update .version1 {
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      background-color: rgba(255, 180, 182, 0.4);
+    }
+
+    .rmks {
+      font-size: 14px;
+      font-weight: 400;
+			color:#777;
+    }
+
+    .badge_modal{display:inline-block;padding:0 3px;border-radius: 4px;background-color:#15C5CE;color:#fff;margin-right: 4px;font-size: 11px;line-height:150%;height: 17px;line-height: 17px;position: relative;top: -1px;}
+    .badge_windowPop{display:inline-block;padding:0 4px;border-radius: 4px;background-color:#f3955e;color:#fff;margin-right:6px;font-size:13px;line-height:150%;}
+
+    @media screen and (max-width: 800px) {
+      html {
+        font-size: 55%;
+      }
+
+      #wrap {
+        min-width: 320px;
+      }
+
+      thead>tr>th:first-child,
+      thead>tr>th:nth-child(4),
+      thead>tr>th:nth-child(5) {
+        display: none;
+      }
+
+      td[rowspan] {
+        display: none;
+      }
+
+      .desc,
+      .rmks {
+        display: none;
+      }
+
+    }
+    .depth2 td{background-color: #f5f5f5;}
+
+		.dapth1 td{font-size:14px;font-weight: 600;}
+		.dapth1{text-align:center;background-color:#f5f5f5;}
+		.dapth1 > *{background-color:#ecf1f3;}
+  </style>
+</style>
+
+<body>
+	<div id="wrap" class="pub_list">
+	  <header>
+			<div class="tit">OKMS 퍼블리싱 리스트</div>
+			<span class="date">
+				마지막 업데이트: 23-07-12
+			</span>			
+		</header>  
+
+	  <table>
+			<colgroup>
+				<col width="500px">
+				<col width="250px">
+				<col width="*">
+			</colgroup>
+			<thead>
+		
+			<tr>
+				<th>페이지명</th>
+				<th>URL</th>
+				<th>전달사항</th>				
+			</tr>
+		
+			</thead>
+			<tbody>
+
+				<!-- 공통 UI -->
+				<tr class="dapth1">
+					<td colspan="3">공통 UI</td>
+				</tr>
+				<!-- //공통 UI -->
+
+				<tr>
+					<td>
+						<a class="link" href="../views/common/spinner_list.html" target="_blank">컴포넌트로딩</a>
+					</td>
+					<td>spinner_list.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+				<tr>
+					<td>
+						<a class="link" href="../views/common/spinner_page.html" target="_blank">페이지로딩</a>
+					</td>
+					<td>spinner_page.html</td><!--설명-->
+					<td class="rmks">페이지 전체 로딩 시 사용 / body태그 내부 마지막 자식 요소로 배치</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="link" href="../views/common/modal_system.html" target="_blank">시스템팝업</a>
+					</td>
+					<td>modal_system.html</td><!--설명-->
+					<td class="rmks">alert, confirm</td>
+				</tr>
+				<!-- 문서 -->
+				<tr class="dapth1">
+					<td colspan="3">문서</td>
+				</tr>
+				<!-- //문서 -->
+
+				<tr>
+					<td>
+						<a class="link" href="../views/document/list.html" target="_blank">문서</a>
+					</td>
+					<td>list.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<!-- 문서설정 모달 -->
+				<tr class="dapth1">
+					<td colspan="3"><span class="badge_modal">모달</span>문서설정</td>
+				</tr>
+				<!-- //문서설정 모달 -->
+				<tr>
+					<td>
+						문서 > <a class="link" href="../views/document/modal_documentInfo.html" target="_blank"><span class="badge_modal">모달</span>문서설정</a>
+					</td>
+					<td>modal_documentInfo.html</td><!--설명-->
+					<td class="rmks">문서정보 탭 / 문서이력 탭 / 문서분류보기 탭</td>
+				</tr>
+
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>문서설정 > <a class="link" href="../views/document/modal_documentInfo_statusHistory.html" target="_blank"><span class="badge_modal">모달</span>상태이력</a>
+					</td>
+					<td>modal_documentInfo_statusHistory.html</td><!--설명-->
+					<td class="rmks">문서정보 탭</td>
+				</tr>
+
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>문서설정 > <a class="link" href="../views/document/modal_documentInfo_managerSet.html" target="_blank"><span class="badge_modal">2중모달</span>담당자 지정</a>
+					</td>
+					<td>modal_documentInfo_managerSet.html</td><!--설명-->
+					<td class="rmks">문서정보 탭</td>
+				</tr> 
+				
+				<!-- <tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>문서설정 > <a class="link" href="../views/document/modal_documentInfo_categorySet.html" target="_blank"><span class="badge_modal">2중모달</span>문서분류 설정</a>
+					</td>
+					<td>modal_documentInfo_categorySet.html</td>
+					<td class="rmks">문서정보 탭</td>
+				</tr> -->
+
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>문서설정 > <a class="link" href="../views/document/modal_documentInfo_recommendKeyword.html" target="_blank"><span class="badge_modal">2중모달</span>추천키워드 등록</a>
+					</td>
+					<td>modal_documentInfo_recommendKeyword.html</td><!--설명-->
+					<td class="rmks">문서정보 탭</td>
+				</tr>
+
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>문서설정 > <a class="link" href="../views/document/modal_documentInfo_restore.html" target="_blank"><span class="badge_modal">2중모달</span>문서 복원하기</a>
+					</td>
+					<td>modal_documentInfo_restore.html</td><!--설명-->
+					<td class="rmks">문서이력 탭</td>
+				</tr>
+
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>문서설정 > <a class="link" href="../views/document/modal_documentInfo_indexView.html" target="_blank"><span class="badge_modal">2중모달</span>목차내용 보기</a>
+					</td>
+					<td>modal_documentInfo_indexView.html</td><!--설명-->
+					<td class="rmks">목차분류보기 탭</td>
+				</tr>
+
+				<!-- 목차정보 모달 -->
+				<tr class="dapth1">
+					<td colspan="3"><span class="badge_modal">모달</span>목차정보</td>
+				</tr>
+				<!-- //목차정보 모달 -->
+
+				<tr>
+					<td>
+						문서 > <a class="link" href="../views/document/modal_indexInfo.html" target="_blank"><span class="badge_modal">모달</span>목차정보</a>
+					</td>
+					<td>modal_indexInfo.html</td><!--설명-->
+					<td class="rmks">목차정보 탭 / 학습질의 탭</td>
+				</tr>
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>목차정보 > <a class="link" href="../views/document/modal_indexInfo_indexComparison.html" target="_blank"><span class="badge_modal">2중모달</span>선택항목 비교</a>
+					</td>
+					<td>modal_indexInfo_indexComparison.html</td><!--설명-->
+					<td class="rmks">목차정보 탭</td>
+				</tr>
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>목차정보 > <a class="link" href="../views/document/modal_indexInfo_restore.html" target="_blank"><span class="badge_modal">2중모달</span>학습질의 중복 추가에 대한 경고</a>
+					</td>
+					<td>modal_indexInfo_restore.html</td><!--설명-->
+					<td class="rmks">학습질의 탭 </td>
+				</tr>
+				<tr>
+					<td>
+						문서 > <span class="badge_modal">모달</span>목차정보 > <a class="link" href="../views/document/modal_indexInfo_indentCategory.html" target="_blank"><span class="badge_modal">2중모달</span>의도분류</a>
+					</td>
+					<td>modal_indexInfo_indentCategory.html</td><!--설명-->
+					<td class="rmks">학습질의 탭</td>
+				</tr>
+
+				<!-- 메인 -->
+				<tr class="dapth1">
+					<td colspan="3">메인</td>
+				</tr>
+				<!-- 메인 -->
+
+				<tr>
+					<td>
+						<a class="link" href="../views/main/main.html" target="_blank">메인</a>
+					</td>
+					<td>main.html</td><!--설명-->
+					<td class="rmks">주요항목설정 모달 포함</td>
+				</tr>
+
+				<!-- 통합검색 -->
+				<tr class="dapth1">
+					<td colspan="3">통합검색</td>
+				</tr>
+				<!-- 통합검색 -->
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/search.html" target="_blank">통합검색</a>
+					</td>
+					<td>search.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/search_noFilter.html" target="_blank">통합검색</a>
+					</td>
+					<td>search_noFilter.html</td><!--설명-->
+					<td class="rmks">결과좁혀보기 없는 화면</td>
+				</tr>
+
+				<tr>
+					<td>
+						통합검색 > <a class="link" href="../views/search/question.html" target="_blank">질의검색</a>
+					</td>
+					<td>question.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						통합검색 > <a class="link" href="../views/search/question_noFilter.html" target="_blank">질의검색</a>
+					</td>
+					<td>question_noFilter.html</td><!--설명-->
+					<td class="rmks">결과좁혀보기 없는 화면</td>
+				</tr>
+
+				<!-- 마이페이지 -->
+				<tr class="dapth1">
+					<td colspan="3">마이페이지</td>
+				</tr>
+				<!-- 마이페이지 -->
+
+				<tr>
+					<td>
+						<a class="link" href="../views/mypage/mypage_post.html" target="_blank">나의 활동 > 내글</a>
+					</td>
+					<td>mypage_post.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/mypage/mypage_comment.html" target="_blank">나의 활동 > 의견</a>
+					</td>
+					<td>mypage_comment.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>     
+
+				<tr>
+					<td>
+						<a class="link" href="../views/mypage/mypage_scrap.html" target="_blank">나의 활동 > 스크랩</a>
+					</td>
+					<td>mypage_scrap.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<!-- 모달팝업 모음 -->
+				<tr class="dapth1">
+					<td colspan="3">모달팝업 모음</td>
+				</tr>
+				<!-- 모달팝업 모음-->
+				<tr>
+					<td>
+						<a class="link" href="../views/document/modal_comment.html" target="_blank"><span class="badge_modal">모달</span>의견</a>
+					</td>
+					<td>modal_comment.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<span class="badge_modal">모달</span>의견 > <a class="link" href="../views/document/modal_comment_confirm.html" target="_blank">의견삭제 컨펌</a>
+					</td>
+					<td>modal_comment_confirm.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/document/modal_attachments.html" target="_blank"><span class="badge_modal">모달</span>첨부파일</a>
+					</td>
+					<td>modal_attachments.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/document/modal_reference.html" target="_blank"><span class="badge_modal">모달</span>참조</a>
+					</td>
+					<td>modal_reference.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<span class="badge_modal">모달</span>참조 > <a class="link" href="../views/document/modal_reference_edit.html" target="_blank"><span class="badge_modal">2중모달</span>추가/수정</a>
+					</td>
+					<td>modal_reference_edit.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<a class="link" href="../views/document/modal_footnoteRegist.html" target="_blank"><span class="badge_modal">모달</span>각주 삽입</a>
+					</td>
+					<td>modal_footnoteRegist.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_createDoc.html" target="_blank"><span class="badge_modal">모달</span>새글쓰기</a>
+					</td>
+					<td>modal_createDoc.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<span class="badge_modal">모달</span>새글쓰기 > <a class="link" href="../views/search/modal_tempDetail.html" target="_blank"><span class="badge_modal">2중모달</span>상세 팝업</a>
+					</td>
+					<td>modal_tempDetail.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_copy.html" target="_blank"><span class="badge_modal">모달</span>복사</a>
+					</td>
+					<td>modal_copy.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_editCategory.html" target="_blank"><span class="badge_modal">모달</span>문서분류 설정</a>
+					</td>
+					<td>modal_editCategory.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_editField.html" target="_blank"><span class="badge_modal">모달</span>필드 수정</a>
+					</td>
+					<td>modal_editField.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_filterSet.html" target="_blank"><span class="badge_modal">모달</span>결과좁혀보기 설정</a>
+					</td>
+					<td>modal_filterSet.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_sideSet.html" target="_blank"><span class="badge_modal">모달</span>사이드메뉴 설정</a>
+					</td>
+					<td>modal_sideSet.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_sortSet.html" target="_blank"><span class="badge_modal">모달</span>정렬 설정</a>
+					</td>
+					<td>modal_sortSet.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_qa.html" target="_blank"><span class="badge_modal">모달</span>QA 입력</a>
+					</td>
+					<td>modal_qa.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a class="link" href="../views/search/modal_fileDownload.html" target="_blank"><span class="badge_modal">모달</span>파일다운로드</a>
+					</td>
+					<td>modal_fileDownload.html</td><!--설명-->
+					<td class="rmks"></td>
+				</tr>
+			</tbody>
+	  </table>
+
+
+
+
+
+
+
+
+
+</html>

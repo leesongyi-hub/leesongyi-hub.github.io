@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS > 통합검색 > 새글쓰기 모달</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/search.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+
+	<!-- syntaxhighlighter -->
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushCss.js"></script>
+	<link type="text/css" rel="stylesheet" href="../lib/syntaxhighlighter/styles/shCore.css">
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style>
+		.container{
+			display:block;
+			width:1024px;
+			margin:0 auto;
+			padding:40px 0;
+		}
+		.syntaxhighlighter{background-color:#fafafa !important;padding:20px;font-family: 'Pretendard' !important;border-radius: 4px;}
+		.syntaxhighlighter table td.code .line{background-color:transparent !important;}
+		.syntaxhighlighter table td.code .container{display:block;background-color:#f5f5f5;padding:20px;}
+		.syntaxhighlighter .gutter{display:none;}
+		.syntaxhighlighter .string, .syntaxhighlighter .string a{color:#0f94dd !important;}
+		.syntaxhighlighter .color1, .syntaxhighlighter .color1 a{color:#d055e7!important}
+		.syntaxhighlighter table > *{font-family: 'Pretendard' !important;}
+		.html.comments{color:#777;}
+		.html.plain{color:#444;}
+		.badge-bs{color:#fff;background-color:#7952b3;border-radius: 4px;padding:4px 8px;font-size:14px;line-height:100%;font-weight: 400;}
+		
+		h1{
+			font-size:40px;
+			font-weight: 700;
+			color:#111;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.ui-area{border:1px solid #eee;border-bottom:0;border-radius: 4px 4px 0 0;padding:24px 20px;}
+
+		.tit-area{margin-bottom:32px;}
+		.sub-tit-area{margin-bottom:12px;}
+		.sub-tit-area .sub-tit{font-size:20px;font-weight: 500;color:#222;margin-bottom:4px;}
+		.sub-tit-area .sub-txt{font-size:15px;}
+		.sub-tit-area .sub-txt em{color:#0f94dd ;}
+
+		article{margin-bottom:40px;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div class="container">
+		<section>
+			<div class="tit-area">
+				<h1>Checkboxes & Radios<span class="badge-bs">bootstrap v4.6</span></h1>
+				<p></p>
+			</div>
+			<article>
+				<div class="sub-tit-area">
+					<h2 class="sub-tit">Inline</h2>
+					<p class="sub-txt">
+						부모요소에 클래스 <em>.d-flex</em> <em>.flex-wrap</em> 추가
+					</p>
+				</div>
+
+				<div class="ui-area">
+					<div class="d-flex flex-wrap">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="check1"  />
+							<label class="custom-control-label" for="check1"><span>Defalut</span></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="check2" checked />
+							<label class="custom-control-label" for="check2"><span>Checked</span></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="" disabled />
+							<label class="custom-control-label" for=""><span>Disabled</span></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="" checked disabled />
+							<label class="custom-control-label" for=""><span>Checked + Disabled</span></label>
+						</div>
+					</div>
+
+					<div class="d-flex flex-wrap">
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio1" name="sampleRadio" />
+							<label class="custom-control-label" for="radio1"><span>Defalut</span></label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio2" name="sampleRadio" checked />
+							<label class="custom-control-label" for="radio2"><span>Checked</span></label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio3" name="" disabled />
+							<label class="custom-control-label" for="radio3"><span>Disabled</span></label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio4" name="" checked disabled />
+							<label class="custom-control-label" for="radio4"><span>Checked + Disabled</span></label>
+						</div>
+					</div>
+				</div>
+				<!-- code -->
+				<div class="code-area">
+					<div class="code-wrap">
+						<pre class="brush: html;">
+							<!--default-->
+							<div class="custom-control custom-radio">
+								<input type="radio" class="custom-control-input" id="radio1" name="sample"  />
+								<label class="custom-control-label" for="radio1"><span>Defalut</span></label>
+							</div>
+
+							<!--checked-->
+							<div class="custom-control custom-radio">
+								<input type="radio" class="custom-control-input" id="radio2" name="sample" checked />
+								<label class="custom-control-label" for="radio2"><span>Checked</span></label>
+							</div>
+
+							<!--disabled-->
+							<div class="custom-control custom-radio">
+								<input type="radio" class="custom-control-input" id="radio3" name="" disabled />
+								<label class="custom-control-label" for="radio3"><span>Disabled</span></label>
+							</div>
+
+							<!--checked + disabled-->
+							<div class="custom-control custom-radio">
+								<input type="radio" class="custom-control-input" id="radio4" name="" checked disabled />
+								<label class="custom-control-label" for="radio4"><span>Checked + Disabled</span></label>
+							</div>
+							
+						</pre>
+					</div>
+				</div>
+				<!-- //code -->
+			</article>
+
+			<article>
+				<div class="sub-tit-area">
+					<h2 class="sub-tit">Block</h2>
+					<p class="sub-txt">
+						부모요소에 클래스 <em>.block</em> 추가
+					</p>
+				</div>
+				<div class="ui-area">
+					<div class="block">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="check1"  />
+							<label class="custom-control-label" for="check1"><span>Defalut</span></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="check2" checked />
+							<label class="custom-control-label" for="check2"><span>Checked</span></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="" disabled />
+							<label class="custom-control-label" for=""><span>Disabled</span></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="" checked disabled />
+							<label class="custom-control-label" for=""><span>Checked + Disabled</span></label>
+						</div>
+					</div>
+
+					<div class="block">
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio1" name="sampleRadio" />
+							<label class="custom-control-label" for="radio1"><span>Defalut</span></label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio2" name="sampleRadio" checked />
+							<label class="custom-control-label" for="radio2"><span>Checked</span></label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio3" name="" disabled />
+							<label class="custom-control-label" for="radio3"><span>Disabled</span></label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="radio4" name="" checked disabled />
+							<label class="custom-control-label" for="radio4"><span>Checked + Disabled</span></label>
+						</div>
+					</div>
+				</div>
+				<!-- code -->
+				<div class="code-area">
+					<div class="code-wrap">
+						<pre class="brush: html;">
+
+							<!--checkbox-->
+							<div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="check1"  />
+									<label class="custom-control-label" for="check1"><span>Defalut</span></label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="check2" checked />
+									<label class="custom-control-label" for="check2"><span>Checked</span></label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="" disabled />
+									<label class="custom-control-label" for=""><span>Disabled</span></label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="" checked disabled />
+									<label class="custom-control-label" for=""><span>Checked + Disabled</span></label>
+								</div>
+							</div>
+							
+							<!--radio-->
+							<div>
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="radio1" name="sampleRadio" />
+									<label class="custom-control-label" for="radio1"><span>Defalut</span></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="radio2" name="sampleRadio" checked />
+									<label class="custom-control-label" for="radio2"><span>Checked</span></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="radio3" name="" disabled />
+									<label class="custom-control-label" for="radio3"><span>Disabled</span></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="radio4" name="" checked disabled />
+									<label class="custom-control-label" for="radio4"><span>Checked + Disabled</span></label>
+								</div>
+							</div>
+							
+						</pre>
+					</div>
+				</div>
+				<!-- //code -->
+			</article>
+
+			<article>
+				<div class="sub-tit-area">
+					<h2 class="sub-tit">Without labels</h2>
+					<p class="sub-txt">
+						input에 <em>aria-label=""</em> 속성 추가, <em>&lt;span&gt;</em>태그 삭제
+					</p>
+				</div>
+				<div class="ui-area">
+					<div class="d-flex">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="check1" aria-label="Defalut" />
+							<label class="custom-control-label" for="check1"></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="check2" aria-label="Checked" checked />
+							<label class="custom-control-label" for="check2"></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="" aria-label="Disabled" disabled />
+							<label class="custom-control-label" for=""></label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="" aria-label="Checked + Disabled" checked disabled />
+							<label class="custom-control-label" for=""></label>
+						</div>
+					</div>
+
+					<div class="d-flex">
+						<div class="custom-control custom-radio ">
+							<input type="radio" class="custom-control-input" id="check1" name="" aria-label="Defalut" />
+							<label class="custom-control-label" for="check1"></label>
+						</div>
+						<div class="custom-control custom-radio ">
+							<input type="radio" class="custom-control-input" id="check2" name="" aria-label="Checked" checked />
+							<label class="custom-control-label" for="check2"></label>
+						</div>
+						<div class="custom-control custom-radio ">
+							<input type="radio" class="custom-control-input" id="" name="" aria-label="Disabled" disabled />
+							<label class="custom-control-label" for=""></label>
+						</div>
+						<div class="custom-control custom-radio ">
+							<input type="radio" class="custom-control-input" id="" name="" aria-label="Checked + Disabled" checked disabled />
+							<label class="custom-control-label" for=""></label>
+						</div>
+					</div>
+				</div>
+				<!-- code -->
+				<div class="code-area">
+					<div class="code-wrap">
+						<pre class="brush: html;">
+
+							<!--checkbox-->
+							<div class="d-flex">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="check1" aria-label="Defalut" />
+									<label class="custom-control-label" for="check1"></label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="check2" aria-label="Checked" checked />
+									<label class="custom-control-label" for="check2"></label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="" aria-label="Disabled" disabled />
+									<label class="custom-control-label" for=""></label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="" aria-label="Checked + Disabled" checked disabled />
+									<label class="custom-control-label" for=""></label>
+								</div>
+							</div>
+		
+							<!--radio-->
+							<div class="d-flex">
+								<div class="custom-control custom-radio ">
+									<input type="radio" class="custom-control-input" id="check1" name="" aria-label="Defalut" />
+									<label class="custom-control-label" for="check1"></label>
+								</div>
+								<div class="custom-control custom-radio ">
+									<input type="radio" class="custom-control-input" id="check2" name="" aria-label="Checked" checked />
+									<label class="custom-control-label" for="check2"></label>
+								</div>
+								<div class="custom-control custom-radio ">
+									<input type="radio" class="custom-control-input" id="" name="" aria-label="Disabled" disabled />
+									<label class="custom-control-label" for=""></label>
+								</div>
+								<div class="custom-control custom-radio ">
+									<input type="radio" class="custom-control-input" id="" name="" aria-label="Checked + Disabled" checked disabled />
+									<label class="custom-control-label" for=""></label>
+								</div>
+							</div>
+							
+						</pre>
+					</div>
+				</div>
+				<!-- //code -->
+			</article>
+		</section>
+
+	</div>
+</div>
+
+</body>
+</html>

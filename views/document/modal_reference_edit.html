@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+	
+	<!--S. 참조 추가 / 수정 모달-->
+	<div class="modal modal_referenceEdit" id="modal_referenceEdit" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:block;">
+		<div class="modal-dialog w700">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="tit">참조 추가 / 수정</h5>
+					<button type="button" class="btn-close" data-dismiss="modal">
+						<i class="icoSvg stroke i_s24 col_lightgray">
+							<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+						</i>  
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="category_wrap include_tab h_auto d-flex">
+						
+						<!--//S. category_tree-->
+						<div class="category_tree w100 hide_scrollX">
+							
+							<!--S. Tab Navi-->
+							<ul class="nav nav-tabs nav-justified nav_type2" id="myTab" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-toggle="tab" data-target="#tabcont_okms" type="button" role="tab" aria-selected="true">OKMS</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" data-toggle="tab" data-target="#tabcont_link" type="button" role="tab" aria-selected="false" tabindex="-1">외부사이트</button>
+								</li>
+							</ul>
+							<!--//E. Tab Navi-->
+							
+							<!--S. Tab Contents-->
+							<div div="" class="tab-content" id="myTabContent">
+
+								<!--S. OKMS 탭-->
+								<div id="tabcont_okms" class="tab-pane active include_fixHeader" role="tabpanel" tabindex="0">
+									<div class="fix_header">
+
+										<!--S. 22.11.14 추가-->
+										<div class="form_group d-flex align-items-center mb12">
+											<label class="form-label mr8" for="search">참조명<span class="caption col_red ml4">(필수)</span></label>
+											<input id="search" class="form_input flex-fill" placeholder="참조명을 입력하세요.">
+										</div>
+										<!--//E. 22.11.14 추가-->
+
+										<div class="titSearch_box d-flex align-items-center justify-content-end">
+											<div class="d-flex flex-wrap">
+												<div class="custom-control custom-radio form-check">
+													<input type="radio" id="" name="" class="custom-control-input" checked>
+													<label class="custom-control-label" for=""><span>문서명</span></label>
+												</div>
+												<div class="custom-control custom-radio form-check">
+													<input type="radio" id="" name="" class="custom-control-input">
+													<label class="custom-control-label" for=""><span>목차명</span></label>
+												</div>
+											</div>
+	
+											<div class="form_group_wrap flex-nowrap d-flex align-items-center ml16">
+												<div class="form_group">
+													<input id="search" class="form_input" placeholder="OKMS내 목차명 검색">
+												</div>
+												<button type="button" class="button primary md ml8"><i class="ico ico_search_white i_s20"></i><span class="label">찾기</span></button>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="cont_area">
+
+										<!--Case1. 문서명/목차명 0개일때-->
+										<div class="nodata align_center">
+											<i class="ico ico_search_gray i_s20"></i>
+											<p class="caption_body">검색어를 입력해 주세요.</p>
+										</div>
+										<!--Case1. 문서명/목차명 0개일때-->
+
+										<!--Case2. 검색결과 없음-->
+										<div class="nodata align_center">
+											<i class="ico ico_cancel i_s20"></i>
+											<p class="caption_body">검색결과가 없습니다.</p>
+										</div>
+										<!--Case2. 검색결과 없음-->
+	
+										<!--Case3. 검색결과 있음-->
+										<div class="search_mode tree_okms">
+											<ul>
+												<li>
+													<div class="tree">
+														<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+														<a href="javascript:;" class="checked">
+															<em class="tree_list_tit">1.1 범죄경력자료 및 수사경력자료 범죄경력자료 및 수사경력자료 범죄경력자료 및 수사경력자료 범죄경력자료 및 수사경력자료 </em>
+															<em class="tree_list_cation">(문서명이 들어가는 공간 문서명이 들어가는 공간문서명이 들어가는 공간)</em>
+														</a>
+													</div>
+												</li>
+												<li>
+													<div class="tree">
+														<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+														<a href="javascript:;" class="">
+															<em class="tree_list_tit">1.1 범죄경력자료</em>
+															<em class="tree_list_cation">(문서명이 들어가는 공간 문서명이 들어가는 공간문서명이 들어가는 공간)</em>
+														</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!--//Case3. 검색결과 있음-->
+									</div>
+
+								</div>
+								<!--//E. OKMS 탭 -->
+
+								<!--S. 외부사이트 탭-->
+								<div id="tabcont_link" class="tab-pane tabcont_link" role="tabpanel" tabindex="0">
+								
+									<!--S. 22.11.14 추가-->
+									<div class="form_group d-flex align-items-center mb12 mt24">
+										<label class="form-label mr8" for="search">참조명<span class="caption col_red ml4">(필수)</span></label>
+										<input id="search" class="form_input flex-fill" placeholder="참조명을 입력하세요.">
+									</div>
+									<!--//E. 22.11.14 추가-->
+
+									<!--case1. 기본-->
+									<div class="form_group d-flex mb24">
+										<label class="form-label mt6 mr8" for="">URL</label>
+										<div class="flex-grow-1">
+											<input type="text" class="form_input w100" placeholder="URL을 입력하세요">
+										</div>
+									</div>
+
+									<!--case2. success-->
+									<div class="form_group d-flex success mb24">
+										<label class="form-label mt6 mr8" for="">URL</label>
+										<div class="flex-grow-1">
+											<input type="text" class="form_input w100" placeholder="URL을 입력하세요">
+											<p class="state_txt mt4">규칙에 맞게 입력했을 때</p>
+										</div>
+									</div>
+
+									<!--case3. error-->
+									<div class="form_group d-flex error mb24">
+										<label class="form-label mt6 mr8" for="">URL</label>
+										<div class="flex-grow-1">
+											<input type="text" class="form_input w100" placeholder="URL을 입력하세요">
+											<p class="state_txt mt4">전체 URL을 입력하세요 (예:https//example.org)</p>
+										</div>
+									</div>
+									
+								</div>
+								<!--//E. 외부사이트 탭-->
+
+								
+							</div>
+							<!--//E. Tab Contents-->
+
+						</div>
+						<!--//E. category_tree-->
+
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+					<button type="button" class="button primary lg" data-dismiss="modal">저장</button>
+
+					<!--S. 비활성화 버튼 addClass('disabled')-->
+					<button type="button" class="button primary lg disabled" data-dismiss="modal">저장</button>
+					<!--//E. 비활성화 버튼 addClass('disabled')-->
+
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--E. 참조 추가 / 수정 모달-->
+
+	<div class="modal-backdrop show"></div>
+</div>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

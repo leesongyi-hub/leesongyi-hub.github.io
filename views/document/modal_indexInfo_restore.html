@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	
+	<div class="modal modal_restore modal_type_alert" id="modal_indexInfoRestore" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:block">
+		<div class="modal-dialog w600">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="tit">학습질의 중복 추가에 대한 경고</h5>
+					<button type="button" class="btn-close" data-dismiss="modal">
+						<i class="icoSvg stroke i_s24 col_lightgray">
+							<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+						</i>  
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="info_txt warning">
+						<p>동일한 학습질의가 <a href="javascript:;" class="txt_link">수사결과보고서</a>문서에서 이미 사용중입니다.<br />
+							중복된 학습질의는 학습시에 예기치 못한 학습결과를 가져올 수 있습니다.<br />
+							그래도 추가하시겠습니까?
+						</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button outline lg" data-dismiss="modal">Cancel</button>
+					<button type="button" class="button primary lg" data-toggle="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-backdrop show"></div>
+
+</div>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

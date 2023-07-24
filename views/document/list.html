@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+	<!--S.header-->
+	<header class="header">
+		<div class="left edit_view">
+
+			<!--S. [반응형 관련] 반응형 추가-->
+			<button type="button" class="btn_indexList ico ico_list_white i_s24 mr8"><span class="skip">목차 목록 메뉴</span></button>
+			<!--E. [반응형 관련] 반응형 추가-->
+
+			<div class="tit_box">
+				<h1>수사결과 보고서</h1>
+				<button btype="button" class="btn_titEdit ico ico_edit_white i_s20"></button>
+			</div>
+			
+			<!-- S. 제목 수정 영역 -->
+			<div class="edit_box">
+				<input type="text" class="form_input" />
+				<button type="button" class="button outline md"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+				<button type="button" class="button outline md btn_cancel"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+			</div>
+			<!-- //E. 제목 수정 영역 -->
+
+			<div class="myMenu_btn_box dropdown">
+
+				<!--S. [반응형 관련] 반응형 추가-->
+				<button type="button" class="ico ico_menu toggleBtn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+					<span class="skip">전체메뉴</span>
+				</button>
+				<!--S. [반응형 관련] 반응형 추가-->
+
+				<div class="dropdown-menu">
+					<a href="javascript:;" class="dropdown-item" data-toggle="modal" data-target="#modal_documentInfo">문서정보</a>
+					<a href="javascript:;" class="dropdown-item">문서이력</a>	
+					<a href="javascript:;" class="dropdown-item border_bot">목차분류보기</a>
+					<a href="javascript:;" class="dropdown-item">단락추가</a>
+					<a href="javascript:;" class="dropdown-item">하위목차 추가</a>
+					<!--S. [반응형 관련] 반응형 추가 22.12.02-->
+					<a href="javascript:;" class="dropdown-item mo border_top"><span>첨부파일</span><i class="ico ico_file i_s20"><span class="mark_count">6</span></i></a>
+					<a href="javascript:;" class="dropdown-item mo"><span>참조</span><i class="ico ico_share i_s20"><span class="mark_count">6</span></i></a>
+					<a href="javascript:;" class="dropdown-item mo"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+					<a href="javascript:;" class="dropdown-item mo"><span>스크랩</span><i class="ico ico_scrap i_s20 toggleBtn"></i></a>
+					<!--//E. [반응형 관련] 반응형 추가 22.12.02-->
+				</div>
+			</div>
+		</div>
+
+		<div class="right">
+
+			<!-- S. 22.12.02 추가-->
+			<ul class="edit_btn_box">
+				<li><button type="button" class="ico ico_file_white i_s20" data-toggle="tooltip" data-placement="bottom" title="첨부파일"><span class="mark_count type_white">6</span></button></li>
+				<li><button type="button" class="ico ico_share_white i_s20" data-toggle="tooltip" data-placement="bottom" title="참조"><span class="mark_count type_white">6</span></button></li>
+				<li><button type="button" class="ico ico_comment_white i_s20" data-toggle="tooltip" data-placement="bottom" title="의견"><span class="mark_count type_white">99+</span></button></li>
+				<li><button type="button" class="ico ico_scrap_white i_s20 toggleBtn" data-toggle="tooltip" data-placement="bottom" title="스크랩"></button></li>
+			</ul>
+			<!-- //E. 22.12.02 추가-->
+			
+			<!-- S. [반응형 관련] 반응형 작업하면서 구조 변경 됨. -->
+			<div class="integratedSearch_box">
+				<div class="integratedSearch">
+					<input type="search" placeholder="문서검색" /><button type="submit" class="ico ico_search"><span class="skip">통합검색</span></button>
+				</div>
+				<button type="button" class="ico ico_close_white i_s24 ml8"><span class="skip">닫기</span></button>
+			</div>
+			<!-- //E. [반응형 관련] 반응형 작업하면서 구조 변경 됨. -->
+
+			<div class="list fontZoom_btn_box">
+				<div>
+					<button type="button" class="ico ico_zoomOut" id="zoomOut" data-toggle="tooltip" data-placement="bottom" title="글씨축소"></button>
+				</div>
+
+				<span id="defaultSize">가</span>
+				<div>
+					<button type="button" class="ico ico_zoomIn" id="zoomIn" data-toggle="tooltip" data-placement="bottom" title="글씨확대">
+					</button>					
+				</div>
+
+			</div>
+
+			<div class="btn_list">
+
+				<!--S. [반응형 관련] 반응형 추가-->
+				<div class="list search_btn_box">
+					<button type="button" class="btn_search_show ico ico_search_white" data-toggle="tooltip" data-placement="bottom" title="검색">
+					</button>
+				</div>
+				<!--E. [반응형 관련] 반응형 추가-->
+
+				<div class="list">
+					<button type="button" class="ico ico_print" data-toggle="tooltip" data-placement="bottom" title="인쇄"></button>
+				</div>
+				<div class="list slideDown_btn_box">
+					<button type="button" class="ico ico_listClose toggleBtn"><span class="tooltip_label_bot">목록 전체 닫기</span></button>					
+				</div>
+			</div>
+
+			<div class="myMenu_btn_box dropdown">
+				<button  type="button" class="ico ico_menu toggleBtn dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="메뉴">
+				</button>
+				<div class="dropdown-menu" aria-labelledby="">	
+					<a href="javascript:;" class="dropdown-item" data-toggle="modal" data-target="#modal_documentInfo">문서정보</a>
+					<a href="javascript:;" class="dropdown-item">문서이력</a>	
+					<a href="javascript:;" class="dropdown-item border_bot">목차분류보기</a>
+					<a href="javascript:;" class="dropdown-item">단락추가</a>
+					<a href="javascript:;" class="dropdown-item">하위목차 추가</a>
+				</div>
+			</div>
+			
+		</div>
+	</header>
+	<!--//E.header-->
+
+	<div class="container">
+
+		<!-- S.left_section  -->
+		<aside class="left_section resizable">
+			<button type="button" class="ico_fold"><span class="skip">접기</span></button>
+			<div class="fix d-flex align-items-center justify-content-between">
+				<h3>목차</h3>
+				<button type="button" class="btn_close ico i_s24 ico_close"><span class="skip">닫기</span></button>
+			</div>
+			<!--S .index_wrap-->
+			<div class="index_navi">
+				<ul>
+					<li>
+						<a href="#idx1"><span>1</span><em>문서기본</em></a>
+						
+						<ul>
+							<li>
+								<a href="#idx1-1"><span>1.1</span><em>문서기본정보</em></a>
+								<ul>
+									<li>
+										<a href="#idx1-1-1"><span>1.1.1</span><em>문서기본정보<button type="button" class="ico ico_outlink i_s16" onclick="window.open('http://www.naver.com')"></button></em></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#idx2"><span>2</span><em>하위목차 없을때</em></a>
+					</li>
+				</ul>
+			</div>
+			<!--S .index_wrap-->
+		</aside>
+		<!-- // E.left_section -->
+		
+		<!-- S.right_section  -->
+		<main class="right_section">
+
+			<div class="index_wrap fix">
+				<div class="drag_box">
+					<div class="drag_area">
+						<div class="list">
+							<div class="flex_box">
+								<div class="txt_area">
+									<button class="btn_drag"><span class="skip">순서변경</span></button>
+									<div class="txt_cont" aria-expanded="true">
+
+										<!--S. 22.10.06 수정된 내용 하이라이트 표시
+											<mark class="highlight">수정 문구</mark>
+										-->
+										<mark class="highlight">1피의자는</mark> 2020. 7.경 <a class="out_link">서울시 중구</a> <mark>소재 대신파이낸스빌딩 지하 1층 상호불상 <a class="link">커피숍</a>에서 고소인에게
+										“내가 재직 중인 회사에서 서울시청의 동작구 사당동 주차장 공사에</mark> 1조 원 정도를 투자했다.
+										그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단 서울시청 소속 공무원들을 만나는 데 필요한 경비
+										<mark class="highlight">1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을</mark> 인수해서 그 법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데,
+										법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다. 그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를
+										변제할 의사나 능력이 없었다. <mark class="highlight">피의자</mark>는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원, 2020. 9. 18.경 1,000만 원을
+										피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+									</div>									
+									
+									<!--S. [반응형 관련] 반응형 추가-->
+									<div class="mo_txtArea_control">
+										<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+										<div class="dropdown-menu">
+											<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+											<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+											<a href="javascript:;" class="dropdown-item">삭제</a>
+										</div>
+										<button type="button" class="btn_txtAcco ico i_s20 ico_arrT"><span class="skip">펼치기</span></button>										
+									</div>
+									<!--//E. [반응형 관련] 반응형 추가-->
+
+								</div>
+
+								<!--S. 22.10.04 에디터 버튼 UI 수정-->
+								<div class="edit_btn_box">
+									<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+									<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+									<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+								</div>
+								<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+								
+							</div>
+							<div class="edit_box">
+								<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+									에디터 삽입
+								</div>
+
+								<!--S. 22.10.04 에디터 버튼 항목 수정-->
+								<div class="edit_btn_box">
+									<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+									<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+								</div>
+								<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+
+							</div>
+						</div>
+
+						<div class="list">
+							<div class="flex_box">
+								<div class="txt_area">
+									<button class="btn_drag"><span class="skip">순서변경</span></button>
+									<div class="txt_cont" aria-expanded="true">
+										<mark>1피의자는</mark> 2020. 7.경 <a class="out_link">서울시 중구</a> 소재 대신파이낸스빌딩 지하 1층 상호불상 <a class="link">커피숍</a>에서 고소인에게 “내가 재직 중인 회사에서 서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다. 그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단 서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그 법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다. 그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원, 2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+									</div>									
+									
+									<!--S. [반응형 관련] 반응형 추가-->
+									<div class="mo_txtArea_control">
+										<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+										<div class="dropdown-menu">
+											<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+											<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+											<a href="javascript:;" class="dropdown-item">삭제</a>
+										</div>
+										<button type="button" class="btn_txtAcco ico i_s20 ico_arrT"><span class="skip">펼치기</span></button>										
+									</div>
+									<!--//E. [반응형 관련] 반응형 추가-->
+
+								</div>
+								
+								<!--S. 22.10.04 에디터 버튼 UI 수정-->
+								<div class="edit_btn_box">
+									<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+									<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+									<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+								</div>
+								<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+
+							</div>
+							<div class="edit_box">
+								<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+									에디터 삽입
+								</div>
+
+								<!--S. 22.10.04 에디터 버튼 항목 수정-->
+								<div class="edit_btn_box">
+									<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+									<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+								</div>
+								<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="index_wrap flexible">
+				<!--1뎁스-->
+				<ul class="sortable">
+					<li>
+						<!--S. drag_box-->
+						<div class="drag_box on">
+							<div class="tit_area" id="idx1">
+								<button class="btn_drag"><span class="skip">순서변경</span></button>
+								<div class="left edit_view">
+									<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>
+
+									<h4>
+										<span>1</span><em>📝 해당 문서에 각주 기능 추가</em>
+										<button btype="button" class="btn_titEdit ico ico_edit i_s20" data-toggle="tooltip" data-placement="bottom" title="목차명 수정"></button>
+									</h4>
+
+									<!-- S. 제목 수정 영역 -->
+									<div class="edit_box">
+										<input type="text" class="form_input" value="등록된 제목 등록된 제목" />
+										<button type="button" class="button outline md"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+										<button type="button" class="button outline md btn_cancel"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+									</div>
+									<!-- E. 제목 수정 영역 -->
+
+								</div>
+								<ul class="edit_btn_box">
+									<li>
+										<button type="button" class="ico ico_file" data-toggle="tooltip" data-placement="top" title="첨부파일"><span class="mark_count">6</span></button>
+									</li>
+									<li><button type="button" class="ico ico_share" data-toggle="tooltip" data-placement="top" title="참조"><span class="mark_count">6</span></button></li>
+									<li><button type="button" class="ico ico_comment" data-toggle="tooltip" data-placement="top" title="의견"><span class="mark_count">99+</span></button></li>
+									<li><button type="button" class="ico ico_scrap toggleBtn" data-toggle="tooltip" data-placement="top" title="스크랩"></button></li>
+									<li class="dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<button type="button" class="ico ico_more " data-toggle="tooltip" data-placement="top" title="더보기"></button>
+										
+										<div class="dropdown-menu dropdown-menu-right">
+											
+											<!--S. [반응형 관련] 반응형추가-->
+											<a href="javascript:;" class="dropdown-item mo"><span>첨부파일</span><i class="ico ico_file"><span class="mark_count">6</span></i></a>
+											<a href="javascript:;" class="dropdown-item mo"><span>참조</span><i class="ico ico_share"><span class="mark_count">6</span></i></a>
+											<a href="javascript:;" class="dropdown-item mo"><span>의견</span><i class="ico ico_comment"><span class="mark_count">6</span></i></a>
+											<a href="javascript:;" class="dropdown-item mo border_bot"><span>스크랩</span><i class="ico ico_scrap toggleBtn"></i></a>
+											<!--//E. [반응형 관련] 반응형추가-->
+
+											<a href="javascript:;" class="dropdown-item">목차정보</a>
+											<a href="javascript:;" class="dropdown-item border_bot">연계 질의관리</a>	
+											<a href="javascript:;" class="dropdown-item ">하위목차 추가</a>
+											<a href="javascript:;" class="dropdown-item">단락 추가</a>
+											<a href="javascript:;" class="dropdown-item">목차 삭제</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="drag_area"> 
+
+								<div class="list">
+									<div class="flex_box">
+										<div class="txt_area">
+											<button class="btn_drag"><span class="skip">순서변경</span></button>
+											<div class="txt_cont">
+												<mark>대신파이낸스빌딩</mark>
+												지하 1층 상호불상 <a class="link">커피숍</a>에서 고소인	에게 “내가 재직 중인 회사에서
+												<a id="tooltip-1" class="footnote-num" href="#fn-1" title="<span>[1]</span>각주 설명"><span id="rfn-1"></span>[1]</a>서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+												<a id="tooltip-2" class="footnote-num" href="#fn-2" title="<span>[2]</span>각주 설명"><span id="rfn-2"></span>[2]</a>서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+												<a id="tooltip-3" class="footnote-num" href="#fn-3" title="<span>[3]</span>각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명 각주 설명"><span id="rfn-3"></span>[3]</a>법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+												그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+												2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+											</div>
+
+											<!--S. [반응형 관련] 반응형 추가-->
+											<div class="mo_txtArea_control">
+												<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+												<div class="dropdown-menu">
+													<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+													<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+													<a href="javascript:;" class="dropdown-item">삭제</a>
+												</div>
+											</div>
+											<!--//E. [반응형 관련] 반응형 추가-->
+										</div>
+
+										<!--S. 22.10.04 에디터 버튼 UI 수정-->
+										<div class="edit_btn_box">
+											<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+											<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+											<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+										</div>
+										<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+
+									</div>
+
+									<!-- S. 수정모드 -->
+									<div class="edit_box">
+										<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+											에디터 삽입
+										</div>
+
+										<!--S. 22.10.04 에디터 버튼 항목 수정-->
+										<div class="edit_btn_box">
+											<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+											<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+										</div>
+										<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+
+									</div>
+									<!-- // E. 수정모드 -->
+								</div>
+
+								<div class="list">
+									<div class="flex_box">
+										<div class="txt_area">
+											<button class="btn_drag"><span class="skip">순서변경</span></button>
+											<div class="txt_cont">
+												<mark>대신파이낸스빌딩</mark>
+												지하 1층 상호불상 <a class="link">커피숍</a>에서 고소인	에게 “내가 재직 중인 회사에서
+												서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+												서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+												법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+												그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+												2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+											</div>
+
+											<!--S. [반응형 관련] 반응형 추가-->
+											<div class="mo_txtArea_control">
+												<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+												<div class="dropdown-menu">
+													<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+													<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+													<a href="javascript:;" class="dropdown-item">삭제</a>
+												</div>																				
+											</div>
+											<!--//E. [반응형 관련] 반응형 추가-->
+										</div>
+
+										<!--S. 22.10.04 에디터 버튼 UI 수정-->
+										<div class="edit_btn_box">
+											<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+											<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+											<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+										</div>
+										<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+
+									</div>
+
+									<!-- S. 수정모드 -->
+									<div class="edit_box">
+										<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+											에디터 삽입
+										</div>
+
+										<!--S. 22.10.04 에디터 버튼 항목 수정-->
+										<div class="edit_btn_box">
+											<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+											<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+										</div>
+										<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+
+									</div>
+									<!-- // E. 수정모드 -->
+								</div>
+							</div>
+							<!--// E. drag_area-->
+						</div>
+						<ul>
+							<li>
+								<div class="drag_box on">
+									<div class="tit_area" id="idx1-1">
+										<button class="btn_drag ui-sortable-handle"><span class="skip">순서변경</span></button>
+										<div class="left edit_view">
+											<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>
+		
+											<h4>
+												<span>1-1</span><em>목차명</em>
+												<button btype="button" class="btn_titEdit ico ico_edit i_s20" data-toggle="tooltip" data-placement="bottom" title="목차명 수정"></button>
+											</h4>
+		
+											<!-- S. 제목 수정 영역 -->
+											<div class="edit_box">
+												<input type="text" class="form_input" value="등록된 제목 등록된 제목">
+												<button type="button" class="button outline md"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+												<button type="button" class="button outline md btn_cancel"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+											</div>
+											<!-- E. 제목 수정 영역 -->
+		
+										</div>
+										<ul class="edit_btn_box">
+											<li>
+												<button type="button" class="ico ico_file" data-toggle="tooltip" data-placement="top" title="첨부파일"><span class="mark_count">6</span></button>
+											</li>
+											<li><button type="button" class="ico ico_share" data-toggle="tooltip" data-placement="top" title="참조"><span class="mark_count">6</span></button></li>
+											<li><button type="button" class="ico ico_comment" data-toggle="tooltip" data-placement="top" title="의견"><span class="mark_count">99+</span></button></li>
+											<li><button type="button" class="ico ico_scrap toggleBtn" data-toggle="tooltip" data-placement="top" title="스크랩"></button></li>
+											<li class="dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button type="button" class="ico ico_more " data-toggle="tooltip" data-placement="top" title="더보기"></button>
+												<div class="dropdown-menu dropdown-menu-right">
+		
+													<!--S. [반응형 관련] 반응형추가-->
+													<a href="javascript:;" class="dropdown-item mo"><span>첨부파일</span><i class="ico ico_file"><span class="mark_count">6</span></i></a>
+													<a href="javascript:;" class="dropdown-item mo"><span>참조</span><i class="ico ico_share"><span class="mark_count">6</span></i></a>
+													<a href="javascript:;" class="dropdown-item mo"><span>의견</span><i class="ico ico_comment"><span class="mark_count">6</span></i></a>
+													<a href="javascript:;" class="dropdown-item mo border_bot"><span>스크랩</span><i class="ico ico_scrap toggleBtn"></i></a>
+													<!--//E. [반응형 관련] 반응형추가-->
+		
+													<a href="javascript:;" class="dropdown-item">목차정보</a>
+													<a href="javascript:;" class="dropdown-item border_bot">연계 질의관리</a>
+													<a href="javascript:;" class="dropdown-item ">하위목차 추가</a>
+													<a href="javascript:;" class="dropdown-item">단락 추가</a>
+													<a href="javascript:;" class="dropdown-item">목차 삭제</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+									
+									<div class="drag_area ui-sortable">
+										<div class="list">
+											<div class="flex_box">
+												<div class="txt_area">
+													<button class="btn_drag ui-sortable-handle"><span class="skip">순서변경</span></button>
+													<div class="txt_cont" style="font-size: 14px;">
+														목차내용
+													</div>
+		
+													<!--S. [반응형 관련] 반응형 추가-->
+													<div class="mo_txtArea_control">
+														<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+														<div class="dropdown-menu">
+															<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+															<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+															<a href="javascript:;" class="dropdown-item">삭제</a>
+														</div>																				
+													</div>
+													<!--//E. [반응형 관련] 반응형 추가-->
+												</div>
+		
+												<!--S. 22.10.04 에디터 버튼 UI 수정-->
+												<div class="edit_btn_box">
+													<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+													<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+													<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+												</div>
+												<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+		
+											</div>
+		
+											<!-- S. 수정모드 -->
+											<div class="edit_box">
+												<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+													에디터 삽입
+												</div>
+		
+												<!--S. 22.10.04 에디터 버튼 항목 수정-->
+												<div class="edit_btn_box">
+													<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+													<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+												</div>
+												<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+		
+											</div>
+											<!-- // E. 수정모드 -->
+										</div>
+		
+		
+									</div>
+									<!--// E. drag_area-->
+								</div>
+								<ul>
+									<li>
+										<div class="drag_box on">
+											<div class="tit_area" id="idx1-1-1">
+												<button class="btn_drag ui-sortable-handle"><span class="skip">순서변경</span></button>
+												<div class="left edit_view">
+													<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>
+				
+													<h4>
+														<span>1-1-1</span><em>목차명</em>
+														<button btype="button" class="btn_titEdit ico ico_edit i_s20" data-toggle="tooltip" data-placement="bottom" title="목차명 수정"></button>
+													</h4>
+				
+													<!-- S. 제목 수정 영역 -->
+													<div class="edit_box">
+														<input type="text" class="form_input" value="등록된 제목 등록된 제목">
+														<button type="button" class="button outline md"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+														<button type="button" class="button outline md btn_cancel"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+													</div>
+													<!-- E. 제목 수정 영역 -->
+				
+												</div>
+												<ul class="edit_btn_box">
+													<li>
+														<button type="button" class="ico ico_file" data-toggle="tooltip" data-placement="top" title="첨부파일"><span class="mark_count">6</span></button>
+													</li>
+													<li><button type="button" class="ico ico_share" data-toggle="tooltip" data-placement="top" title="참조"><span class="mark_count">6</span></button></li>
+													<li><button type="button" class="ico ico_comment" data-toggle="tooltip" data-placement="top" title="의견"><span class="mark_count">99+</span></button></li>
+													<li><button type="button" class="ico ico_scrap toggleBtn" data-toggle="tooltip" data-placement="top" title="스크랩"></button></li>
+													<li class="dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<button type="button" class="ico ico_more " data-toggle="tooltip" data-placement="top" title="더보기"></button>
+														<div class="dropdown-menu dropdown-menu-right">
+				
+															<!--S. [반응형 관련] 반응형추가-->
+															<a href="javascript:;" class="dropdown-item mo"><span>첨부파일</span><i class="ico ico_file"><span class="mark_count">6</span></i></a>
+															<a href="javascript:;" class="dropdown-item mo"><span>참조</span><i class="ico ico_share"><span class="mark_count">6</span></i></a>
+															<a href="javascript:;" class="dropdown-item mo"><span>의견</span><i class="ico ico_comment"><span class="mark_count">6</span></i></a>
+															<a href="javascript:;" class="dropdown-item mo border_bot"><span>스크랩</span><i class="ico ico_scrap toggleBtn"></i></a>
+															<!--//E. [반응형 관련] 반응형추가-->
+				
+															<a href="javascript:;" class="dropdown-item">목차정보</a>
+															<a href="javascript:;" class="dropdown-item border_bot">연계 질의관리</a>	
+															<a href="javascript:;" class="dropdown-item ">하위목차 추가</a>
+															<a href="javascript:;" class="dropdown-item">단락 추가</a>
+															<a href="javascript:;" class="dropdown-item">목차 삭제</a>
+														</div>
+													</li>
+												</ul>
+											</div>
+											
+											<div class="drag_area ui-sortable">
+												<div class="list">
+													<div class="flex_box">
+														<div class="txt_area">
+															<button class="btn_drag ui-sortable-handle"><span class="skip">순서변경</span></button>
+															<div class="txt_cont" style="font-size: 14px;">
+																목차내용
+															</div>
+				
+															<!--S. [반응형 관련] 반응형 추가-->
+															<div class="mo_txtArea_control">
+																<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+																<div class="dropdown-menu">
+																	<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+																	<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+																	<a href="javascript:;" class="dropdown-item">삭제</a>
+																</div>																				
+															</div>
+															<!--//E. [반응형 관련] 반응형 추가-->
+														</div>
+				
+														<!--S. 22.10.04 에디터 버튼 UI 수정-->
+														<div class="edit_btn_box">
+															<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+															<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+															<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+														</div>
+														<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+				
+													</div>
+				
+													<!-- S. 수정모드 -->
+													<div class="edit_box">
+														<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+															에디터 삽입
+														</div>
+				
+														<!--S. 22.10.04 에디터 버튼 항목 수정-->
+														<div class="edit_btn_box">
+															<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+															<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+														</div>
+														<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+				
+													</div>
+													<!-- // E. 수정모드 -->
+												</div>				
+				
+											</div>
+											<!--// E. drag_area-->
+										</div>
+									</li>
+								</ul>
+		
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--S. drag_box-->
+						<div class="drag_box on">
+							<div class="tit_area" id="idx2">
+								<button class="btn_drag"><span class="skip">순서변경</span></button>
+								<div class="left edit_view">
+									<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>
+
+									<h4>
+										<span>2</span><em>하위목차 없을 경우</em>
+										<button btype="button" class="btn_titEdit ico ico_edit i_s20" data-toggle="tooltip" data-placement="bottom" title="목차명 수정"></button>
+									</h4>
+
+									<!-- S. 제목 수정 영역 -->
+									<div class="edit_box">
+										<input type="text" class="form_input" value="등록된 제목 등록된 제목" />
+										<button type="button" class="button outline md"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+										<button type="button" class="button outline md btn_cancel"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+									</div>
+									<!-- E. 제목 수정 영역 -->
+
+								</div>
+								<!-- <ul class="edit_btn_box">
+									<li>
+										<button type="button" class="ico ico_file" data-toggle="modal" data-target="#modal_attachments"><span class="skip">첨부파일</span><span class="mark_count">6</span></button>
+									</li>
+									<li><button type="button" class="ico ico_share"><span class="skip">공유하기</span><span class="mark_count">6</span></button></li>
+									<li><button type="button" class="ico ico_comment"><span class="skip">의견</span><span class="mark_count">99+</span></button></li>
+									<li><button type="button" class="ico ico_scrap toggleBtn"><span class="skip">스크랩</span></button></li>
+									<li class="dropdown">
+										<button type="button" class="ico ico_more dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="skip">메뉴더보기</span></button>
+										<div class="dropdown-menu">	
+											<a href="javascript:;" class="dropdown-item">목차정보</a>
+											<a href="javascript:;" class="dropdown-item border_bot">연계 질의관리</a>	
+											<a href="javascript:;" class="dropdown-item ">하위목차 추가</a>
+											<a href="javascript:;" class="dropdown-item">단락 추가</a>
+											<a href="javascript:;" class="dropdown-item">목차 삭제</a>
+										</div>
+									</li>
+								</ul> -->
+							</div>
+							
+							<div class="drag_area">
+								<!--
+									정보입력 전 UI '.nodata' 클래스 추가
+								-->
+								<div class="list nodata">
+									<div class="flex_box">
+										<div class="txt_area">
+											
+											<!-- <button class="btn_drag"><span class="skip">순서변경</span></button> -->
+
+											<!--S. 22.10.04 수정-->
+											<div class="txt_cont">
+												더블클릭하시면 편집이 가능합니다.	
+											</div>
+											<!--S. 22.10.04 수정-->
+
+											<!--S. [반응형 관련] 반응형 추가-->
+											<div class="mo_txtArea_control">
+												<button type="button" class="ico ico_more_gray dropdown-toggle i_s20" data-toggle="dropdown" aria-expanded="true"><span class="skip">메뉴 더보기</span></button>
+												<div class="dropdown-menu">
+													<a href="javascript:;" class="dropdown-item border_bot"><span>의견</span><i class="ico ico_comment i_s20"><span class="mark_count">6</span></i></a>
+													<a href="javascript:;" class="dropdown-item btn_edit">수정</a>
+													<a href="javascript:;" class="dropdown-item">삭제</a>
+												</div>
+											</div>
+											<!--//E. [반응형 관련] 반응형 추가-->
+										</div>
+
+
+										<!--S. 22.10.04 에디터 버튼 UI 수정-->
+										<div class="edit_btn_box">
+											<button type="button" class="btn_comment" data-toggle="tooltip" data-placement="top" title="의견"><i class="ico i_s18 ico_comment"></i><span class="mark_count">99+</span></button>
+											<button type="button" class="btn_edit" data-toggle="tooltip" data-placement="top" title="수정"><i class="ico i_s18 ico_editor"></i></button>
+											<button type="button" data-toggle="tooltip" data-placement="top" title="삭제"><i class="ico i_s18 ico_trash"></i></button>
+										</div>
+										<!--//E. 22.10.04 에디터 버튼 UI 수정-->
+
+									</div>
+
+									<!-- S. 수정모드 -->
+									<div class="edit_box">
+										<div class="edit_area" style="height:172px;width:100%;background-color:bisque;"> 
+											에디터 삽입
+										</div>
+
+										<!--S. 22.10.04 에디터 버튼 항목 수정-->
+										<div class="edit_btn_box">
+											<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+											<button type="button" class="btn_del button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+										</div>
+										<!--//E. 22.10.04 에디터 버튼 항목 수정-->
+
+									</div>
+									<!-- // E. 수정모드 -->
+								</div>
+
+							</div>
+							<!--// E. drag_area-->
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<!--S. 각주 리스트-->
+			<div class="footnote">
+				<ul>
+					<li>
+						<span id="fn-1"></span>
+						<a class="col_mint70" href="#rfn-1">[1]</a>법에 의하여 권리·의무의 주체로서의 자격을 부여받은 사람
+					</li>
+					<li>
+						<span id="fn-2"></span>
+						<a class="col_mint70" href="#rfn-2">[2]</a>공개경쟁채용 시험에서 합격하거나 공직 선거에서 선출된 사람을 말하며 그 외 공무상 필요 인력에 있어 절차에 의해 채용되기도 하는데 국가나 지방자치단체가 직접 고용하는 공무직, 외부 업체를 통한 위탁종사자도 있다.
+					</li>
+					<li>
+						<span id="fn-3"></span>
+						<a class="col_mint70" href="#rfn-3">[3]</a><a href="javascript:;" class="out_link">외국인</a> 발행지와 지급지가 서로 다른 나라일 때 쓴다.
+					</li>
+				</ul>
+			</div>
+			<!--// E. 각주 리스트-->
+
+			<button class="btn_top">
+				<i class="ico ico_top i_s24"></i>
+				<span class="skip">상단으로</span>
+			</button>
+		</main>
+		<!-- // E.right_section -->
+	</div>
+
+
+	<!--S.[반응형 관련] 모달 768px 이하에서만 노출-->
+		<!-- S. 목차제목 수정 모달 -->
+		<div class="modal modal_titEdit fade" id="modal_titEdit" tabindex="-1" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog w700">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="tit">목차이름</h5>						
+						<button type="button" class="btn-close" data-dismiss="modal">
+							<i class="icoSvg stroke i_s24 col_lightgray">
+								<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+							</i>  
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="regist_wrap">
+							<div class="d-flex mb8">
+								<textarea class="form-control" id="">기존 제목</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+						<button type="button" class="button primary lg" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //E. 목차제목 수정 모달 -->
+
+		<!-- S. 목차내용(에디터) 수정 모달 -->
+		<div class="modal modal_edit fade" id="modal_edit" tabindex="-1" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog w700">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="tit">내용</h5>	
+						<p class="sub_txt">목차명 > 단락</p>
+						<button type="button" class="btn-close" data-dismiss="modal">
+							<i class="icoSvg stroke i_s24 col_lightgray">
+								<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+							</i>  
+						</button>
+					</div>
+					<div class="modal-body">
+						<div style="width:100%;height:100%;border:1px solid #eee;border-radius: 4px;">
+							에디터 삽입
+						</div>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+						<button type="button" class="button primary lg" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //E. 목차내용(에디터) 수정 모달 -->
+		
+	<!--//E.[반응형 관련] 모달-->
+</div>
+
+<script>
+
+	//[반응형 관련] 스크립트 모음
+	$(document).ready(function(){
+		//검색박스
+		$('.btn_search_show').on('click', function(){
+			$('.integratedSearch_box').addClass('on');
+		});
+
+		$('.integratedSearch_box .ico_close_white').on('click', function(){
+			$('.integratedSearch_box').removeClass('on');
+		});
+
+		//목차 네비게이션
+		$('.btn_indexList').on('click', function(){
+			$('.left_section').addClass('open');
+		});
+		$('.left_section .btn_close').on('click', function(){
+			$('.left_section').removeClass('open');
+		});
+
+	});
+
+	HTMLElement.prototype.closestByClass = function(className) {
+    var target = this;
+    while (!target.parentElement.classList.contains(className)) {
+        target = target.parentElement;
+        if (target.parentElement === null) {
+            throw new Error('Not found.');
+        }
+    }
+    return target;
+	};
+
+	var responsiveTitleEdit = function() {
+  var wrapper = document.getElementById('wrapper');
+  var btnTitEdit = document.querySelectorAll('.btn_titEdit');
+  var btnCancel = document.querySelectorAll('.edit_box .btn_cancel');
+
+  if (wrapper || btnTitEdit || btnCancel) {
+    for (var i = 0; i < btnTitEdit.length; ++i) {
+      btnTitEdit[i].addEventListener('click', function(e) {
+        if (wrapper.classList.contains('mo')) {
+          // [모바일,태블릿]
+          // 768이하일때 제목 수정 모달팝업으로 띄움
+					$('#modal_titEdit').modal('show');
+        } else {
+          // [PC]      
+					var element = e.target;
+					while (element !== null && !element.classList.contains('edit_view')) {
+						element = element.parentElement;
+					}
+					if (element !== null) {
+						element.classList.add('on');
+					}					
+        }
+      });
+    }
+
+    for (var i = 0; i < btnCancel.length; ++i) {
+      //제목 수정 취소
+      btnCancel[i].addEventListener('click', function(e) {
+				var element = e.target;
+					while (element !== null && !element.classList.contains('edit_view')) {
+						element = element.parentElement;
+					}
+					if (element !== null) {
+						element.classList.remove('on');
+					}
+      	});
+    	}
+  	}
+	};
+
+let responsiveIndexEdit = function() {
+  let wrapper = document.getElementById('wrapper');
+  let btnEdit = document.querySelectorAll('.btn_edit');
+  let btnCancel = document.querySelectorAll('.btn_del');
+
+  if (wrapper || btnEdit || btnCancel) {
+    for (var i = 0; i < btnEdit.length; ++i) {
+      btnEdit[i].addEventListener('click', function(e) {
+        if (wrapper.classList.contains('mo')) {
+          // [모바일,태블릿]
+          // 768이하일때 제목 수정 모달팝업으로 띄움.
+					$('#modal_edit').modal('show');
+        } else {
+          // [PC]
+          var element = e.target;
+          while (element && !element.classList.contains('list')) {
+            element = element.parentElement;
+          }
+          if (element) {
+            element.classList.add('on');
+          }
+        }
+      });
+    }
+
+    for (var i = 0; i < btnCancel.length; ++i) {
+      //수정 취소
+      btnCancel[i].addEventListener('click', function(e) {
+        var element = e.target;
+        while (element && !element.classList.contains('list')) {
+          element = element.parentElement;
+        }
+        if (element) {
+          element.classList.remove('on');
+        }
+      });
+    }
+  }
+};
+
+	var responsiveTxtAccordion = function() {
+  var btnAccodion = document.querySelectorAll('.btn_txtAcco');
+  var txtContent = document.querySelectorAll('.fix .txt_area');
+
+  if (btnAccodion.length > 0 || txtContent.length > 0) {
+			[].forEach.call(btnAccodion, function(btn) {
+				btn.addEventListener('click', function(e) {
+					var parent = this;
+					while (parent && !parent.classList.contains('txt_area')) {
+						parent = parent.parentNode;
+					}
+					if (parent) {
+						parent.classList.toggle('fold');
+					}
+				});
+			});
+  	}
+	};
+
+	let isScrolling = false;
+
+	let responsiveHeaderScroll = function() {
+		// 스크롤 이벤트
+		let beforePosition = document.querySelector('.right_section').scrollTop;
+		let headerBottomCont = document.querySelector('.header .right');
+
+		if (beforePosition || headerBottomCont || document.getElementById('wrapper').classList.contains('mo')) {
+			document.querySelector('.right_section').addEventListener('scroll', function(e) {
+				if (!isScrolling) {
+					let afterPosition = document.querySelector('.right_section').scrollTop;
+
+					if (beforePosition < afterPosition) {
+						headerBottomCont.style.top = '0';
+					} else {
+						headerBottomCont.style.top = '56px';
+					}
+					beforePosition = afterPosition;
+				}
+			});
+		}
+	}
+
+	responsiveHeaderScroll(); //헤더스크롤감지하여 영역 노출 미노출
+	responsiveTxtAccordion(); //문단 접고 펼치기
+	responsiveTitleEdit(); //제목 수정
+	responsiveIndexEdit(); //목차내용 수정	
+</script>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

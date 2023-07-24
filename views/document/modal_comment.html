@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+	
+	<body>
+	
+	<div id="wrapper">		
+	
+		<!-- S. 의견 모달 -->
+		<div class="modal modal_comment" id="modal_comment" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:block;">
+			<div class="modal-dialog w700">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="tit">의견</h5>
+						<strong class="mt8 mb2">문서명 : 100세변액연금보험(B1.0 무배당)</strong>
+						<p class="sub_txt"><em>목차명</em> > 단락</p>
+						<button type="button" class="btn-close" data-dismiss="modal">
+							<i class="icoSvg stroke i_s24 col_lightgray">
+								<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+							</i>  
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="regist_wrap">
+							<div class="d-flex mb8">
+								<textarea class="form-control" id="" placeholder="의견을 남겨보세요."></textarea>
+							</div>
+							<div class="d-flex align-items-center mb_24">
+								<div class="d-flex me-auto">
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="content1_1">
+										<label class="custom-control-label" for="content1_1"><span>중요의견</span></label>
+									</div>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="content1_2">
+										<label class="custom-control-label" for="content1_2"><span>작성자 비공개</span></label>
+									</div>
+								</div>
+								<div>
+									<button type="button" class="button primary md"><i class="ico ico_save_white i_s20"></i><span class="label">저장</span></button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="comment_wrap">
+							
+							<!--S. 의견리스트
+								Case1.중요의견
+							-->
+							<div class="comment_list">
+								<div class="list_item fix">
+									<div class="list_head">
+										<div class="name">정승한<span class="caption">2022-08-03 13:13</span></div>
+										<span class="badge_state col_white bg_blue">중요의견</span>
+									</div>
+									<div class="list_cont">
+										<div class="view_mode d-flex">
+											<div class="txt_area flex-grow-1">
+												다양한 산업과 융합을 통한 무한가치, 인간의 삶을 보다 풍요롭게 할 기술 혁신을 꿈꾸며 오늘도 NHN다이퀘스트는 최선을 다하고 있습니다.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--//E. 의견리스트-->
+
+							<!--S. 의견리스트
+								Case2.중요의견 + 내가 쓴 의견
+							-->
+							<div class="comment_list">
+								<div class="list_item fix edit_view">
+									<div class="list_head">
+										<div class="name">정승한<span class="caption">2022-08-03 13:13</span></div>
+										<span class="badge_state col_white bg_blue">중요의견</span>
+									</div>
+									<div class="list_cont">
+										<div class="view_mode d-flex">
+											<div class="txt_area flex-grow-1">
+												다양한 산업과 융합을 통한 무한가치, 인간의 삶을 보다 풍요롭게 할 기술 혁신을 꿈꾸며 오늘도 NHN다이퀘스트는 최선을 다하고 있습니다.
+											</div>
+											<div class="edit_btn_box flex-shrink-0">
+												<button type="button" class="btn_edit button outline sm"><i class="ico i_s18 ico_edit"></i><span class="label">수정</span></button>
+												<button type="button" class="button outline sm" data-toggle="modal" data-target="#modal_comment_deleted"><i class="ico i_s18 ico_del"></i><span class="label">삭제</span></button>
+											</div>
+										</div>
+
+										<!--S. 의견 수정모드-->
+										<div class="edit_mode">
+											<div class="d-flex align-items-center mb_24">
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="check1" checked="">
+													<label class="form-check-label" for="check1">중요의견</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="check2">
+													<label class="form-check-label" for="check2">작성자 비공개</label>
+												</div>											
+											</div>
+											<div class="mt8 d-flex">
+												<div class="flex-grow-1">
+													<textarea class="form-control" id="exampleFormControlTextarea1" rows="3">다양한 산업과 융합을 통한 무한가치, 인간의 삶을 보다 풍요롭게 할 기술 혁신을 꿈꾸며 오늘도 NHN다이퀘스트는 최선을 다하고 있습니다.</textarea>
+												</div>
+												<div class="flex-shrink-0">
+													<div class="edit_btn_box">
+														<button type="button" class="btn_save button outline sm"><i class="ico i_s18 ico_save"></i><span class="label">저장</span></button>
+														<button type="button" class="button outline sm"><i class="ico i_s18 ico_del"></i><span class="label">삭제</span></button>
+														<button type="button" class="btn_cancel button outline sm"><i class="ico i_s18 ico_cancel"></i><span class="label">취소</span></button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--E. 의견 수정모드-->
+
+									</div>
+								</div>
+							</div>
+							<!--//E. 의견리스트-->						
+
+							<!--S. 의견리스트
+								Case3.기본 + 비공개
+							-->
+							<div class="comment_list">
+								<div class="list_item">
+									<div class="list_head">
+										<!-- 비공개일때 addClass : private -->
+										<div class="name private">비공개<span class="caption">2022-08-03 13:13</span></div>
+									</div>
+									<div class="list_cont">
+										<div class="view_mode d-flex">
+											<div class="txt_area flex-grow-1">
+												다양한 산업과 융합을 통한 무한가치, 인간의 삶을 보다 풍요롭게 할 기술 혁신을 꿈꾸며 오늘도 NHN다이퀘스트는 최선을 다하고 있습니다.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--//E. 의견리스트-->
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+						<button type="button" class="button primary lg" data-dismiss="modal">확인</button>
+
+						<!--
+							비활성화 버튼
+							addClass : disabled
+						-->
+						<button type="button" class="button primary lg disabled" data-dismiss="modal">확인</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //E. 의견 모달 -->
+
+		<div class="modal modal_type_system modal_comment_deleted fade" id="modal_comment_deleted" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+			<div class="modal-dialog w400">
+				<div class="modal-content">
+					<div class="modal-header">
+						<!--
+							📢개발전달사항
+							타이틀 없을 시 h5태그만 remove. 
+							<div class="modal-header">태그는 항상 있어야 레이아웃 안깨짐
+						-->
+						<h5 class="tit">의견 삭제</h5>
+						<button type="button" class="btn-close" data-dismiss="modal">
+							<i class="icoSvg stroke i_s24 col_lightgray">
+								<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+							</i>  
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>해당 의견을 삭제하시겠습니까?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button outline lg" data-bs-dismiss="modal_comment_deleted">취소</button>
+						<button type="button" class="button primary lg" data-bs-dismiss="modal_comment_deleted">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal-backdrop show"></div>
+
+</div>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

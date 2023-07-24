@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+	
+	<!-- S. 문서정보 모달-->
+	<div class="modal modal_documentInfo" id="modal_documentInfo" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-modal="true" role="dialog" style="display:block;">
+		<div class="modal-dialog w1000">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="tit">문서명 표시</h5>
+					<button type="button" class="btn-close" data-dismiss="modal">
+						<i class="icoSvg stroke i_s24 col_lightgray">
+							<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+						</i>  
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<!--S. 공통 tab nav-->
+					<ul class="nav nav-tabs nav-justified mb32" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link active" data-toggle="tab" data-target="#tab1" type="button" role="tab" aria-selected="true">문서정보</button>
+						</li>
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link" data-toggle="tab" data-target="#tab2" type="button" role="tab" aria-selected="false">문서이력<span class="mark_count">5</span></button>
+						</li>
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link" data-toggle="tab" data-target="#tab3" type="button" role="tab" aria-selected="false">목차분류보기</button>
+						</li>
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link" data-toggle="tab" data-target="#tab4" type="button" role="tab" aria-selected="false">학습질의</button>
+						</li>
+					</ul>
+					<!--//E. 공통 tab nav-->
+
+					<div class="tab-content" id="myTabContent">
+
+						<!--S. 1. 문서정보-->
+						<div id="tab1" class="tab-pane active" role="tabpanel" tabindex="0">
+							<div class="section">
+								<div class="tit_area d-flex align-items-end justify-content-between mb12">
+									<p class="h2">문서정보</p>
+									<div class="custom-control custom-checkbox form-check">
+										<input type="checkbox" id="" class="custom-control-input" checked />
+										<label class="custom-control-label" for=""><span>중요문서</span></label>
+									</div>
+								</div>
+								<div class="table_wrap">
+									<div class="responsive_table">
+										<dl class="tr">
+											<dt class="th"><span>상태</span></dt>
+											<dd class="td">
+												<a href="javscript:;" data-toggle="modal" data-target="#modal_stateHistory"><span class="dot_state"><i class="mark bg_mint70"></i>등록</span></a>
+												<a href="javscript:;" data-toggle="modal" data-target="#modal_stateHistory"><span class="dot_state"><i class="mark bg_yellow"></i>수정</span></a>
+												<a href="javscript:;" data-toggle="modal" data-target="#modal_stateHistory"><span class="dot_state"><i class="mark bg_blue"></i>완료</span></a>
+												<a href="javscript:;" data-toggle="modal" data-target="#modal_stateHistory"><span class="dot_state"><i class="mark bg_red"></i>반려</span></a>
+												<a href="javscript:;" data-toggle="modal" data-target="#modal_stateHistory"><span class="dot_state"><i class="mark bg_green"></i>승인</span></a>
+											</dd>
+										</dl>
+										<dl class="tr">
+											<dt class="th"><span>조회수</span></dt>
+											<dd class="td">23,893</dd>
+										</dl>
+										<dl class="tr">
+											<dt class="th"><span>등록자</span></dt>
+											<dd class="td">정동진</dd>
+										</dl>
+										<dl class="tr">
+											<dt class="th"><span>등록일시</span></dt>
+											<dd class="td">2021.08.29 19:27:32 2021.08.29 19:27:32 2021.08.29 19:27:32 2021.08.29 19:27:32</dd>
+										</dl>
+										<dl class="tr">
+											<dt class="th"><span>수정자</span></dt>
+											<dd class="td">정동진</dd>
+										</dl>
+										<dl class="tr">
+											<dt class="th"><span>수정일시</span></dt>
+											<dd class="td">2021.08.29 19:27:32</dd>
+										</dl>
+	
+										<dl class="tr">
+											<dt class="th"><span>게시일</span></dt>
+											<dd class="td">
+												<div class="d-flex align-items-center">
+													<!-- 등록 전🔻 -->
+													<span class="caption_body">등록전</span><button type="button" class="button outline md ml8">등록</button>
+	
+													<!-- 등록 후🔻 -->
+													<span>2021.08.29</span><button type="button" class="button outline md ml8">수정</button>
+												</div>
+											</dd>
+										</dl>
+	
+										<dl class="tr">
+											<dt class="th"><span>담당자</span></dt>
+											<dd class="td">
+												<div class="d-flex align-items-center">
+													<!-- 등록 전🔻 -->
+													<span class="caption_body">미지정</span>
+														<button type="button" class="button outline md ml8" data-toggle="modal" data-target="#modal_manager">설정</button>
+	
+													<!-- 등록 후🔻 -->
+													<span>홍길동</span><button type="button" class="button outline md ml8">수정</button>
+												</div>
+											</dd>
+										</dl>
+	
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>문서분류</span></dt>
+											<dd class="td">
+												<div class="d-flex">
+	
+													<!-- 추가된 분류 없을때 아래 .add_tag_list영역 삭제🔻 -->
+													<div class="add_tag_list flex-grow-1 mr8">
+														<div class="add_tag d-flex">
+															<span class="txt">문서 대분류 > 문서 중분류 > 문서 소분류 > 분류1</span>
+															<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+														</div>
+														<div class="add_tag d-flex">
+															<span class="txt">문서 대분류 > 문서 중분류 > 문서 소분류 > 분류1</span>
+															<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+														</div>
+														<div class="add_tag d-flex">
+															<span class="txt">문서 대분류 > 문서 중분류 > 문서 소분류 > 분류1</span>
+															<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+														</div>
+													</div>
+	
+													<div class="flex-shrink-0">
+														<button type="button" class="button outline md" data-toggle="modal" data-target="#modal_categoryRegist">추가</button>
+													</div>
+												</div>
+											</dd>
+										</dl>
+	
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>출처</span></dt>
+											<dd class="td">
+												<!-- 보기 모드🔻 -->
+												<div class="view_mode">
+													<div class="d-flex">
+														<span>출처는 인포채터 3입니다.</span>
+														<button btype="button" class="btn_titEdit ico ico_edit i_s20 ml8"><span class="skip">수정</span></button>
+													</div>
+												</div>
+	
+												<!-- 편집 모드🔻 -->
+												<div class="edit_mode">
+													<div class="edit_box d-flex">
+														<input type="text" class="form_input w700" placeholder="" value="출처는 인포채터 3입니다." />
+														<button type="button" class="button outline md ml8"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+														<button type="button" class="button outline md btn_cancel ml8"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+													</div>
+												</div>
+											</dd>
+										</dl>
+	
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>키워드</span></dt>
+											<dd class="td">
+
+												<div class="edit_box d-flex">
+													<input type="text" class="form_input" placeholder="키워드를 입력해주세요." value="" />
+													<button type="button" class="button outline md ml8">추가</button>
+													<button type="button" class="button primary md ml8">추천키워드 등록</button>
+												</div>
+
+												<!-- 추가된 키워드 없을때 아래 .add_tag_list영역 삭제🔻 -->
+												<div class="add_tag_list">
+													<div class="add_tag">
+														<span class="txt">홍길동</span>
+														<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+													</div>
+													<div class="add_tag">
+														<span class="txt">김철수</span>
+														<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+													</div>
+													<div class="add_tag">
+														<span class="txt">김영희</span>
+														<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+													</div>
+												</div>
+											</dd>
+										</dl>
+	
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>원본 URL</span></dt>
+											<dd class="td">
+												<!-- 보기 모드🔻 -->
+												<div class="view_mode">
+													<div class="d-flex">
+														<span>https://hansungackr-my.sharepoint.com/:p:/g/personal</span>
+														<button btype="button" class="btn_titEdit ico ico_edit i_s20 ml8"><span class="skip">수정</span></button>
+													</div>
+												</div>
+	
+												<!-- 편집 모드🔻 -->
+												<div class="edit_mode">
+													<div class="edit_box d-flex">
+														<input type="text" class="form_input w700" placeholder="" value="https://hansungackr-my.sharepoint.com/:p:/g/personal" />
+														<button type="button" class="button outline md ml8"><i class="ico i_s20 ico_save"></i><span class="label">저장</span></button>
+														<button type="button" class="button outline md btn_cancel ml8"><i class="ico i_s20 ico_cancel"></i><span class="label">취소</span></button>
+													</div>
+												</div>
+											</dd>
+										</dl>
+	
+									</div>
+								</div>
+								<!--//E. table_wrap-->
+							</div>
+							<!--//E. section-->
+
+							<div class="section mt32">
+								<p class="h2 mb12">부가정보 설정</p>
+								<div class="table_wrap">
+									<div class="responsive_table">
+
+										<!--S. 22.10.12 노데이터 케이스 추가-->
+										<dl class="tr w100 nodata">
+											<p>데이터가 없습니다.</p>
+										</dl>
+										<!--//E. 22.10.12 노데이터 케이스 추가-->
+
+										<dl class="tr w100">
+											<dt class="th"><span class="essential">셀렉트박스</span></dt>
+											<dd class="td">
+												<div class="edit_box d-flex">
+													<select class="form_input form-select">
+														<option value="">선택하세요</option>
+														<option value="">선택하세요</option>
+													</select>
+													<button type="button" class="button outline md ml8">추가</button>
+												</div>
+											</dd>
+										</dl>
+										<dl class="tr w100 align-items-center">
+											<dt class="th"><span class="essential">라디오</span></dt>
+											<dd class="td">
+												<div class="d-flex flex-wrap">
+													<div class="custom-control custom-radio">
+															<input type="radio" class="custom-control-input" id="radio1" name="sample" checked>
+															<label class="custom-control-label" for="radio1"><span>Label</span></label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input type="radio" class="custom-control-input" id="radio2" name="sample" disabled>
+														<label class="custom-control-label" for="radio2"><span>Label</span></label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input type="radio" class="custom-control-input" id="radio3" name="sample">
+														<label class="custom-control-label" for="radio3"><span>Label</span></label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input type="radio" class="custom-control-input" id="radio4" name="sample">
+														<label class="custom-control-label" for="radio4"><span>Label</span></label>
+													</div>
+												</div>
+											</dd>
+										</dl>
+										<dl class="tr w100 align-items-center">
+											<dt class="th"><span>체크박스</span></dt>
+											<dd class="td">
+												<div class="d-flex flex-wrap">
+													<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="check1" checked>
+															<label class="custom-control-label" for="check1"><span>Label</span></label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="check2" disabled>
+														<label class="custom-control-label" for="check2"><span>Label</span></label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="check3">
+														<label class="custom-control-label" for="check3"><span>Label</span></label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="check4">
+														<label class="custom-control-label" for="check4"><span>Label</span></label>
+													</div>
+												</div>
+											</dd>
+										</dl>
+										<dl class="tr w100">
+											<dt class="th"><span>입력박스</span></dt>
+											<dd class="td">
+												<div class="edit_box d-flex">
+													<input type="text" class="form_input" placeholder="placeholder" value="" />
+													<button type="button" class="button outline md ml8">추가</button>
+												</div>
+											</dd>
+										</dl>
+										<dl class="tr w100">
+											<dt class="th"><span>textarea</span></dt>
+											<dd class="td">
+												<div class="d-flex">
+													<textarea class="form-control" id="" placeholder="내용을 입력하세요." style="height:100px;"></textarea>
+												</div>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--//E. 1. 문서정보-->
+
+						<!--S. 2. 문서이력-->
+						<div id="tab2" class="tab-pane" role="tabpanel" tabindex="0">
+							<div class="section">
+								<div class=" mb12">
+									<p class="mb12">총 <span class="col_mint70">235</span>건의 이력결과가 있습니다.</p>
+								</div>
+								<div class="table_wrap">
+									<table class="table">
+										<colgroup>
+											<col style="width:200px">
+											<col style="width:140px">
+											<col>
+											<col style="width:146px">
+										</colgroup>
+										<thead>
+											<tr> 
+												<th scope="col">
+													<div class="d-flex align-items-center">
+														편집날짜
+														<div class="btn_sort_box ml10">
+															<button type="button" class="up"></button>
+															<button type="button" class="down"></button>
+														</div>
+													</div>
+
+												</th>
+												<th scope="col">편집자</th>
+												<th scope="col">작업</th>												
+												<th scope="col">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>2022-03-19 16:32</td>
+												<td>홍길동</td>
+												<td>문서 수정</td>
+												<td>
+													<div class="d-flex">
+														<button type="button" class="button outline md">결과보기</button>
+														<button type="button" class="button outline md ml16">내용복원</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>2022-03-19 16:32</td>
+												<td>홍길동</td>
+												<td>문서 수정</td>												
+												<td>
+													<div class="d-flex">
+														<button type="button" class="button outline md">결과보기</button>														
+														<button type="button" class="button outline md ml16">내용복원</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>2022-03-19 16:32</td>
+												<td>홍길동</td>
+												<td>문서 수정</td>												
+												<td>
+													<div class="d-flex">
+														<button type="button" class="button outline md">결과보기</button>														
+														<button type="button" class="button outline md ml16">내용복원</button>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+			
+								<nav class="pagination mt16">
+									<ul>
+										<!--비활성 addClass 'disabled'-->
+										<li class="page_item"><button type="button" class="page_link ico btn_start disabled"><span class="skip">처음으로</span></button></li>	
+										<li class="page_item"><button type="button" class="page_link ico btn_prev disabled"><span class="skip">이전</span></button></li>
+										<!--선택됐을때 addClass 'on'-->
+										<li class="page_item on"><button type="button" class="page_link">1</button></li>
+										<li class="page_item"><button type="button" class="page_link">2</button></li>
+										<li class="page_item"><button type="button" class="page_link">3</button></li>
+										<li class="page_item"><button type="button" class="page_link">4</button></li>
+										<li class="page_item"><button type="button" class="page_link">5</button></li>
+										<li class="page_item"><button type="button" class="page_link ico btn_next"><span class="skip">다음</span></button></li>
+										<li class="page_item"><button type="button" class="page_link ico btn_end"><span class="skip">마지막으로</span></button></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<!--//E. 2. 문서이력-->
+
+						<!--S. 3. 목차분류보기-->
+						<div id="tab3" class="tab-pane" role="tabpanel" tabindex="0">
+							<div class="category_wrap view_mode d-flex">
+								<div class="category_tree">								
+									<ul>
+										<li>
+											<div class="tree">												
+												<a href="javascript:;" title="1 문서 대분류">1 문서 대분류</a>
+											</div>
+		
+											<ul>
+												<li>
+													<div class="tree">														
+														<!--선택하면 토글 클래스 checked-->
+														<a href="javascript:;" class="checked" title="1.1 문서 대분류 > 문서 중분류">1.1 문서 대분류 > 문서 중분류</a>
+													</div>
+												</li>										
+												<li>
+													<div class="tree">														
+														<a href="javascript:;" title="1.2 문서 대분류 > 문서 중분류">1.2 문서 대분류 > 문서 중분류</a>
+													</div>
+													<ul>
+														<li>
+															<div class="tree">																
+																<a href="javascript:;" title="1.2.1 문서 대분류 > 문서 중분류 > 문서 소분류">1.2.1 문서 대분류 > 문서 중분류 > 문서 소분류</a>
+															</div>
+															<ul>
+																<li>
+																	<div class="tree">																
+																		<a href="javascript:;" title="1.2.1.1 문서 대분류 > 문서 중분류 > 문서 소분류 > 문서 분류">1.2.1.1 문서 대분류 > 문서 중분류 > 문서 소분류 > 문서 분류</a>
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div class="tree">										
+												<a href="javascript:;">2 문서 대분류</a>
+											</div>
+										</li>								
+									</ul>									
+								</div>
+								<div class="category_content">
+									<div class="d-flex align-items-end justify-content-between mb12">
+										<p>총 <span class="col_mint70">235</span>건의 이력결과가 있습니다.</p>
+										<button type="button" class="button primary md">목차분류 추가</button>
+									</div>
+									<div class="table_wrap">
+										<table class="table">
+											<colgroup>
+												<col style="width:187px">												
+												<col>
+												<col style="width:160px">
+											</colgroup>
+											<thead>
+												<tr> 
+													<th scope="col">
+														<div class="d-flex align-items-center">
+															목차명
+															<div class="btn_sort_box ml10">
+																<button type="button" class="up"></button>
+																<button type="button" class="down"></button>
+															</div>
+														</div>	
+													</th>
+													<th scope="col">
+														<div class="d-flex align-items-center">
+															문서분류정보
+															<div class="btn_sort_box ml10">
+																<button type="button" class="up"></button>
+																<button type="button" class="down"></button>
+															</div>
+														</div>	
+													</th>
+													<th scope="col">관리</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>목차1</td>
+													<td>문서분류1 > 문서문류 2> 문서분류3</td>
+													<td>
+														<div class="d-flex">
+															<button type="button" class="button outline md">내용보기</button>
+															<button type="button" class="button outline md ml16">삭제</button>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<nav class="pagination mt16">
+										<ul>
+											<!--비활성 addClass 'disabled'-->
+											<li class="page_item"><button type="button" class="page_link ico btn_start disabled"><span class="skip">처음으로</span></button></li>	
+											<li class="page_item"><button type="button" class="page_link ico btn_prev disabled"><span class="skip">이전</span></button></li>
+											<!--선택됐을때 addClass 'on'-->
+											<li class="page_item on"><button type="button" class="page_link">1</button></li>
+											<li class="page_item"><button type="button" class="page_link">2</button></li>
+											<li class="page_item"><button type="button" class="page_link">3</button></li>
+											<li class="page_item"><button type="button" class="page_link">4</button></li>
+											<li class="page_item"><button type="button" class="page_link">5</button></li>
+											<li class="page_item"><button type="button" class="page_link ico btn_next"><span class="skip">다음</span></button></li>
+											<li class="page_item"><button type="button" class="page_link ico btn_end"><span class="skip">마지막으로</span></button></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<!--//E. 3. 목차분류보기-->
+
+						<!--S. 4. 학습질의-->
+						<div id="tab4" class="tabCont_linkedQuery tab-pane" role="tabpanel" tabindex="0">
+							<div class="section">
+								<p class="h2 mb12">질의 정보</p>
+								<div class="table_wrap">
+									<div class="responsive_table">
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>사용여부</span></dt>
+											<dd class="td">
+												<div class="d-flex flex-wrap">
+													<div class="custom-control custom-radio ">
+														<input type="radio" class="custom-control-input" id="radio1"  />
+														<label class="custom-control-label" for="radio1" name="sampleRadio"><span>사용</span></label>
+													</div>
+													<div class="custom-control custom-radio ">
+														<input type="radio" class="custom-control-input" id="radio2"  />
+														<label class="custom-control-label" for="radio2" name="sampleRadio"><span>사용안함</span></label>
+													</div>
+												</div>
+											</dd>
+										</dl>
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>의도 분류 선택</span></dt>
+											<dd class="td">
+												<div class="d-flex">
+													<button tpye="button" class="button outline md">의도명 찾기</button>
+
+													<!--S. 의도명 등록했을 때 노출-->
+													<div class="add_tag_list">
+														<div class="add_tag d-flex mt0">
+															<span class="txt">지점 안가고도 통장 신청 하려고 하는데</span>
+															<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+														</div>
+													</div>
+													<button tpye="button" class="button outline md ml8">수정</button>
+													<!--//E. 의도명 등록했을 때 노출-->
+
+												</div>
+											</dd>
+										</dl>
+
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>출처</span></dt>
+											<dd class="td">
+												<div class="d-flex">
+													<input type="text" class="form_input w100" placeholder="출처 입력" value="">													
+												</div>
+											</dd>
+										</dl>
+
+										<dl class="tr w100 edit_view">
+											<dt class="th"><span>학습질의</span></dt>
+											<dd class="td">
+												<div class="d-flex flex-wrap w100">
+													<div class="form_group_wrap flex-nowrap d-flex align-items-center flex-fill">
+														<div class="form_group w100">															
+															<input type="text" id="search" class="form_input w100" placeholder="학습질의 입력">
+														</div>
+														<button type="button" class="button outline md ml8"><span class="label">추가</span></button>
+													</div>
+												</div>
+												<p class="txt_info mt4">기행문자(Enter)를 이용해 다중 추가 가능</p>
+												
+												<!-- 추가된 분류 없을때 아래 .add_tag_list영역 삭제🔻 -->
+												<div class="add_tag_list flex-grow-1 mt16">
+													<div class="add_tag d-flex">
+														<span class="txt">지점 안가고도 통장 신청 하려고 하는데</span>
+														<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+													</div>
+													<div class="add_tag d-flex">
+														<span class="txt">지점 안가고도 통장 신청 하려고 하는데</span>
+														<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+													</div>
+													<div class="add_tag d-flex">
+														<span class="txt">지점 안가고도 통장 신청 하려고 하는데지점 안가고도 통장 신청 하려고 하는데지점 안가고도 통장 신청 하려고 하는데지점 안가고도 통장 신청 하려고 하는데지점 안가고도 통장 신청 하려고 하는데지점 안가고도 통장 신청 하려고 하는데</span>
+														<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+													</div>
+												</div>
+												
+											</dd>
+										</dl>
+									</div>
+								</div>
+								<!--//E. table_wrap-->
+							</div>
+
+							<div class="section mt32">
+								<div class="d-flex justify-content-between align-items-end mb12">
+									<p class="h2">답변</p>
+
+									<div class="carouselSlider_pagenation">
+										<button type="button" id="prev" class="button prev"><span class="skip">이전</span></button>
+										<span class="count"><strong id="currentIndex" class="current">1</strong> / <em id="totalIndex">4</em></span>
+										<button type="button" id="next" class="button next"><span class="skip">다음</span></button>
+									</div>
+								</div>
+
+								<div class="carouselSlider">
+									<div class="slider_item">
+										<textarea class="form-control" style="height:200px" readonly></textarea>
+									</div>
+									<div class="slider_item">
+										<textarea class="form-control" style="height:200px" readonly>1 보기전용</textarea>
+									</div>
+									<div class="slider_item">
+										<textarea class="form-control" style="height:200px" readonly>2 보기전용</textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--S. 4. 학습질의-->
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+					<button type="button" class="button primary lg" data-dismiss="modal">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //E. 문서정보 모달 -->
+
+	<div class="modal-backdrop fade show"></div>
+</div>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

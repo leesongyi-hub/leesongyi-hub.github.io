@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	
+	<div class="modal modal_intent" id="modal_intent" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:block;">
+		<div class="modal-dialog w700">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="tit">의도분류</h5>
+					<p class="sub_txt">아래 목록에서 의도 분류를 선택해 주세요.</p>
+					<button type="button" class="btn-close" data-dismiss="modal">
+						<i class="icoSvg stroke i_s24 col_lightgray">
+							<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+						</i>  
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form_group_wrap col2 d-flex right align-items-center justify-content-end right mb24">
+						<div class="form_group d-flex align-items-center">
+							<label class="form-label mr8" for="category">대분류</label>					
+							<select id="category" class="form_input form-select">
+								<option>선택하세요.</option>
+							</select>
+						</div>
+						<div class="form_group d-flex align-items-center ml24">
+							<label class="form-label mr8" for="search">검색어</label>
+							<input id="search" class="form_input" placeholder="회원을 찾아보세요.">
+						</div>
+						<button type="button" class="button primary md ml8"><i class="ico ico_search_white i_s20"></i><span class="label">찾기</span></button>
+					</div>
+
+					<div class="add_tag_list d-flex justify-content-end mb8">
+						<div class="add_tag mr0">
+							<span class="txt">찾은 의도명이 나옴</span>
+							<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+						</div>
+					</div>
+
+					<div class="category_wrap include_tab scrollY d-flex">
+						
+						<!--//S. category_tree-->						
+						<div class="category_tree w100">
+							
+							<!--S. Tab Navi-->
+							<ul class="nav nav-tabs nav-justified nav_type2" id="myTab" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-toggle="tab" data-target="#categoryTree" type="button" role="tab" aria-selected="true">분류선택</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" data-toggle="tab" data-target="#categorySearch" type="button" role="tab" aria-selected="false" tabindex="-1">검색결과</button>
+								</li>
+							</ul>
+							<!--//E. Tab Navi-->
+							
+							<!--S. Tab Contents-->
+							<div div="" class="tab-content" id="myTabContent">
+
+								<!--S. 분류선택 탭-->
+								<div id="categoryTree" class="tab-pane active" role="tabpanel" tabindex="0">
+									<ul>
+										<!--li에 'on' 클래스 있으면 펼침-->
+										<li class="on">
+											<div class="tree">
+												<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+												<a href="javascript:;" title="문서 대분류">1 문서 대분류<span class="count">(3)</span></a>
+											</div>		
+											<ul>
+												<li>
+													<div class="tree">																					
+														<a href="javascript:;" title="문서 대분류 > 문서 중분류" class="checked">1.1 문서 대분류 &gt; 문서 중분류<span class="count">(3)</span></a>
+													</div>
+												</li>										
+												<li>
+													<div class="tree">	
+														<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+														<a href="javascript:;" title="문서 대분류 > 문서 중분류">1.2 문서 대분류 &gt; 문서 중분류<span class="count">(3)</span></a>
+													</div>
+													<ul>
+														<li>
+															<div class="tree">	
+																<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>													
+																<a href="javascript:;" title="문서 대분류 > 문서 중분류 > 문서 소분류">1.2.1 문서 대분류 &gt; 문서 중분류 &gt; 문서 소분류<span class="count">(3)</span></a>
+															</div>
+															<ul>
+																<li>
+																	<div class="tree">																
+																		<a href="javascript:;" title="문서 대분류 > 문서 중분류 > 문서 소분류 > 문서 분류">1.2.1.1 문서 대분류 &gt; 문서 중분류 &gt; 문서 소분류 &gt; 문서 분류<span class="count">(3)</span></a>
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div class="tree">
+												<a href="javascript:;">2 문서 대분류<span class="count">(3)</span></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//E. 분류선택 탭-->
+
+								<!--S. 검색결과 탭-->
+								<div id="categorySearch" class="tab-pane" role="tabpanel" tabindex="0">
+
+									<!--Case2. 기본화면-->
+									<div class="nodata align_center">
+										<i class="ico ico_cancel i_s20"></i>
+										<p class="caption_body">검색결과가 없습니다.</p>
+									</div>
+									<!--Case2. 기본화면-->
+
+									<!--Case2. 검색결과 없음-->
+									<div class="nodata align_center">
+										<i class="ico ico_search_gray i_s20"></i>
+										<p class="caption_body">검색어를 입력해 주세요.</p>
+									</div>
+									<!--Case2. 검색결과 없음-->
+
+									<!--Case3. 검색결과 있음-->
+									<div class="search_mode">
+										<ul>
+											<li>
+												<div class="tree">
+													<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+													<a href="javascript:;" title="1.1 문서 대분류 > 문서 중분류" class="checked">1.1 문서 대분류 &gt; 문서 중분류</a>
+												</div>
+											</li>
+											<li>
+												<div class="tree">
+													<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+													<a href="javascript:;" title="1.1.1 문서 대분류 > 문서 중분류 > 문서 중분류">1.1.1 문서 대분류 &gt; 문서 중분류 &gt; 문서 중분류</a>
+												</div>
+											</li>
+											<li>
+												<div class="tree">
+													<button type="button" class="btn_acco ico ico_arrR"><span class="skip">펼치기</span></button>
+													<a href="javascript:;" title="1.1.1.1 문서 대분류 > 문서 중분류 > 문서 중분류 > 문서 분류">1.1.1.1 문서 대분류 &gt; 문서 중분류 &gt; 문서 중분류 &gt; 문서 분류</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!--//Case3. 검색결과 있음-->
+
+								</div>
+								<!--//E. 검색결과 탭 -->
+								
+							</div>
+							<!--//E. Tab Contents-->
+
+						</div>
+						<!--//E. category_tree-->
+
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+					<button type="button" class="button primary lg" data-dismiss="modal">저장</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<div class="modal-backdrop show"></div>
+</div>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

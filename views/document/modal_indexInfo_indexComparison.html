@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+	<!--S.header-->
+
+	
+	<!-- S. 목차정보 모달(목차정보 탭) > 선택항목 비교 -->
+	<div class="modal modal_indexComparison modal_indexView" id="modal_indexComparison" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:block;">
+		<div class="modal-dialog w1600">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="tit">선택항목 비교</h5>
+					<button type="button" class="btn-close" data-dismiss="modal">
+						<i class="icoSvg stroke i_s24 col_lightgray">
+							<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+						</i>  
+					</button>
+				</div>
+
+				<div class="modal-body">
+
+					<ul class="nav nav-tabs nav-justified mb32" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link active" data-toggle="tab" data-target="#indexInfo" type="button" role="tab" aria-selected="true">정승한<p>편집일자 2022-08-03 13:13</p></button>
+						</li>
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link" data-toggle="tab" data-target="#query" type="button" role="tab" aria-selected="false" tabindex="-1">황민국<p>편집일자 2022-08-03 13:13</p></button>
+						</li>
+					</ul>
+					
+					<div class="row" id="myTabContent">
+						
+						<!--S. before-->
+						<div class="tab-pane active section before col-6 themed-grid-col" id="indexInfo" role="tabpanel" tabindex="0">
+							<div class="d-flex mb12">
+								<strong>정승한 </strong><span class="ml8 col_mint70">편집일자 2022-08-03 13:13</span>
+							</div>
+							<div class="index_wrap">
+								<!--1뎁스-->
+								<ul>
+									<li>
+										<!--S. drag_box-->
+										<div class="drag_box on">
+											<div class="tit_area">
+												<div class="left">
+													<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>		
+													<h4>
+														<span>1</span>문서기본정보
+													</h4>
+												</div>
+											</div>
+											
+											<div class="drag_area">
+		
+												<div class="list">
+													<div class="flex_box">
+														<div class="txt_area">
+															<div class="txt_cont">
+																대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+															</div>
+														</div>
+													</div>
+												</div>
+		
+												<div class="list">
+													<div class="flex_box">
+														<div class="txt_area">
+															<div class="txt_cont">
+																대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+															</div>
+														</div>
+													</div>
+												</div>		
+											</div>
+											<!--// E. drag_area-->
+										</div>
+										<!--// E. drag_box-->
+				
+										<!--2뎁스-->
+										<ul>
+											<li>
+												<!--S. drag_box-->
+												<div class="drag_box">
+													<div class="tit_area">
+														<div class="left">
+															<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>
+															<div class="depth_mark">
+																<span></span>
+															</div>
+															<h4>
+																<span>1.1</span>문서기본정보
+															</h4>
+														</div>
+													</div>
+													
+													<div class="drag_area">
+		
+														<div class="list">
+															<div class="flex_box">
+																<div class="txt_area">
+																	<div class="txt_cont">
+																		대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																		서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																		서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																		법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																		그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																		2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+																	</div>
+																</div>
+															</div>
+														</div>
+		
+														<div class="list">
+															<div class="flex_box">
+																<div class="txt_area">
+																	<div class="txt_cont">
+																		대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																		서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																		서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																		법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																		그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																		2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+																	</div>
+																</div>
+															</div>
+														</div>		
+													</div>
+													<!--// E. drag_area-->
+												</div>
+												<!--// E. drag_box-->
+		
+												<!--3뎁스-->
+												<ul>
+													<li>
+														<!--S. drag_box-->
+														<div class="drag_box">
+															<div class="tit_area">
+																<div class="left">
+																	<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>		
+																	<div class="depth_mark">
+																		<span></span>
+																		<span></span>
+																	</div>
+																	<h4>
+																		<span>1.1.1</span>문서기본정보
+																	</h4>
+																</div>
+															</div>
+															
+															<div class="drag_area">
+		
+																<div class="list">
+																	<div class="flex_box">
+																		<div class="txt_area">
+																			<div class="txt_cont">
+																				대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																				서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																				서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																				법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																				그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																				2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+																			</div>
+																		</div>
+																	</div>
+																</div>	
+															</div>
+															<!--// E. drag_area-->
+														</div>
+														<!--// E. drag_box-->
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--//E. before-->
+						
+
+						<!--S. after-->
+						<div class="tab-pane section after col-6 themed-grid-col" id="query" role="tabpanel" tabindex="0">
+							<div class="d-flex mb12">
+								<strong>황민국 </strong><span class="ml8 col_mint70">편집일자 2022-08-03 18:53</span>
+							</div>
+							<div class="index_wrap">
+								<!--1뎁스-->
+								<ul>
+									<li>
+										<!--S. drag_box-->
+										<div class="drag_box on">
+											<div class="tit_area">
+												<div class="left">
+													<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>		
+													<h4>
+														<span>1</span>문서기본정보
+													</h4>
+												</div>
+											</div>
+											
+											<div class="drag_area">
+		
+												<div class="list">
+													<div class="flex_box">
+														<div class="txt_area">
+															<div class="txt_cont">
+																대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+															</div>
+														</div>
+													</div>
+												</div>
+		
+												<div class="list">
+													<div class="flex_box">
+														<div class="txt_area">
+															<div class="txt_cont">
+																대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+															</div>
+														</div>
+													</div>
+												</div>		
+											</div>
+											<!--// E. drag_area-->
+										</div>
+										<!--// E. drag_box-->
+				
+										<!--2뎁스-->
+										<ul>
+											<li>
+												<!--S. drag_box-->
+												<div class="drag_box">
+													<div class="tit_area">
+														<div class="left">
+															<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>		
+															<div class="depth_mark">
+																<span></span>
+															</div>
+															<h4>
+																<span>1.1</span>문서기본정보
+															</h4>
+														</div>
+													</div>
+													
+													<div class="drag_area">
+		
+														<div class="list">
+															<div class="flex_box">
+																<div class="txt_area">
+																	<div class="txt_cont">
+																		대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																		서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																		서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																		법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																		그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																		2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+																	</div>
+																</div>
+															</div>
+														</div>
+		
+														<div class="list">
+															<div class="flex_box">
+																<div class="txt_area">
+																	<div class="txt_cont">
+																		대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																		서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																		서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																		법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																		그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																		2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+																	</div>
+																</div>
+															</div>
+														</div>		
+													</div>
+													<!--// E. drag_area-->
+												</div>
+												<!--// E. drag_box-->
+		
+												<!--3뎁스-->
+												<ul>
+													<li>
+														<!--S. drag_box-->
+														<div class="drag_box">
+															<div class="tit_area">
+																<div class="left">
+																	<button type="button" class="btn_arr"><span class="skip">펼치기</span></button>		
+																	<div class="depth_mark">
+																		<span></span>
+																		<span></span>
+																	</div>
+																	<h4>
+																		<span>1.1.1</span>문서기본정보
+																	</h4>
+																</div>
+															</div>
+															
+															<div class="drag_area">
+		
+																<div class="list">
+																	<div class="flex_box">
+																		<div class="txt_area">
+																			<div class="txt_cont">
+																				대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인	에게 “내가 재직 중인 회사에서
+																				서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다.그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단
+																				서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그
+																				법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 보름 내로 10배로 돌려줄테니 1,000만 원을 빌려달라.”라고 거짓말하였다.
+																				그러나 사실 피의자는 고소인에게 금원을 빌리더라도 이를 변제할 의사나 능력이 없었다. 피의자는 위와 같이 고소인을 기망하여 이에 속은 고소인으로부터 2020. 7. 23.경 5차례에 걸쳐 1,500만 원
+																				2020. 9. 18.경 1,000만 원을 피의자 명의 농협은행 계좌(352-0712-9907-63)로 입금 받아 총 6차례에 걸쳐 합계 2,500만 원을 입금 받았다.
+																			</div>
+																		</div>
+																	</div>
+																</div>	
+															</div>
+															<!--// E. drag_area-->
+														</div>
+														<!--// E. drag_box-->
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--//E. after-->
+						
+					</div>
+				
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="button primary lg" data-dismiss="modal">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //E. 목차정보 모달(목차정보 탭) > 선택항목 비교 -->
+
+	<div class="modal-backdrop show"></div>
+
+</div>
+
+<script>
+	let tabCont = document.querySelector('.modal_indexComparison .row');
+
+	//브라우저 리사이즈 너비 체크
+	window.addEventListener('resize', function(){
+		if ( window.innerWidth <= 768) {
+			tabCont.classList.add('tab-content');
+			
+		}else{
+			tabCont.classList.remove('tab-content');
+		}
+	});
+
+	//초기 진입 시 브라우저 너비 체크
+	if ( window.innerWidth <= 768) {
+		tabCont.classList.add('tab-content');
+		
+	}else{
+		tabCont.classList.remove('tab-content');
+	}
+</script>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all">
+	<title>OKMS</title>
+ 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="../../lib/jquery-ui-1.12.1/jquery-ui.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper-4.5.1/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layout.css">
+
+	<script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/popper.min.js"></script>
+	<script src="../../lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../../lib/swiper-4.5.1/swiper.min.js"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+	
+	<!-- S. 문서설정 모달(문서정보 탭) > 추천키워드 등록 모달 -->
+	<div class="modal modal_recommendKeyword" id="modal_recommendKeyword" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:block;">
+		<div class="modal-dialog w800">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="tit">키워드 추천</h5>
+					<p class="sub_txt">DISA 엔진에 학습된 개체명 데이터를 이용해 키워드를 추출합니다.</p>
+					<p class="sub_txt">나타난 키워드는 DISA에 학습된 개체명 정보임을 안내합니다.</p>
+					<button type="button" class="btn-close" data-dismiss="modal">
+						<i class="icoSvg stroke i_s24 col_lightgray">
+							<svg aria-hidden="true" focusable="false"><use xlink:href="#ico_deleted"></use></svg>
+						</i>  
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form_group_wrap flex-nowrap d-flex align-items-center mb24">
+						<div class="form_group d-flex align-items-center">
+							<select id="category" class="form_input form-select" autofocus="">
+								<option value="">분석대상항목 선택</option>
+								<option value="">사용자 직접 입력</option>
+								<option value="">문서 전체 (하위목차 포함)</option>
+								<option value="">문서 요약</option>
+								<option value="">목차1</option>
+								<option value="">목차1-1</option>
+							</select>											
+						</div>
+						<button type="button" class="button primary md ml8"><span class="label">키워드 분석</span></button>
+					</div>
+
+					<!--S. Case 분석된 키워드항목-->
+					<div class="section mt32">
+						<div class="d-flex align-items-end justify-content-between mb12">
+							<p class="h2 mb0">분석된 키워드 항목</p>
+							<button type="button" class="button outline md ml8">아래 키워드를 문서 키워드로 등록</button>
+						</div>						
+						<div class="list_wrap2">
+							<div class="list_item default">
+								<div class="add_tag_list">
+									<div class="add_tag">
+										<span class="txt">홍길동</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">김철수</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">김영희</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">홍길동</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">김철수</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">김영희</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">홍길동</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">김철수</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+									<div class="add_tag">
+										<span class="txt">김영희</span>
+										<button type="button" class="ico ico_close_gray i_s20"><span class="skip">삭제</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//E. Case 분석된 키워드항목-->
+
+
+					<!--S. Case 분석된 키워드항목 선택된 항목이 없을 때-->
+					<div class="section mt32">
+						<div class="d-flex align-items-end justify-content-between mb12">
+							<p class="h2 mb0">분석된 키워드 항목</p>
+							<button type="button" class="button outline md ml8 disabled">아래 키워드를 문서 키워드로 등록</button>
+						</div>
+						
+						<div class="list_wrap2">
+							<div class="list_item default">
+								<p>분석 대상 항목을 선택하세요.</p>
+							</div>
+						</div>
+					</div>
+					<!--//E. Case 분석된 키워드항목 선택된 항목이 없을 때-->
+
+
+					<!--S. Case 문서요약 선택했을 때-->
+					<div class="section mt32">
+						<p class="h2 mb12">키워드 분석 대상 (문서 요약)</p>						
+						<textarea class="form-control" id="" placeholder="의견을 남겨보세요." style="height:200px;" readonly>피의자는 2020. 7.경 서울시 중구 소재 대신파이낸스빌딩 지하 1층 상호불상 커피숍에서 고소인에게 “내가 재직 중인 회사에서 서울시청의 동작구 사당동 주차장 공사에 1조 원 정도를 투자했다. 그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단 서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그 법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다. 그 공사만 승인이 나면 내가 한 달내로 10배로 돌려줄 수 있으니, 일단 서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그 법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다.   일단 서울시청 소속 공무원들을 만나는 데 필요한 경비 1,500만 원을 빌려달라.”라고 거짓말하였고, 2020. 9.경 위와 같은 장소에서 “내가 법인을 인수해서 그 법인을 이용해서 부산에 있는 700억 원 상당 외환을 받을 수 있는데, 법인을 인수하는데 돈이 당장 필요하다.</textarea>
+					</div>
+					<!--//E. Case 문서요약 선택했을 때-->
+
+
+					<!--S. Case 문서 전체 선택했을 때-->
+					<div class="section mt32">
+						<p class="h2 mb12">키워드 분석 대상 (문서 전체)</p>
+						<div class="border_box">
+							<span class="col_mint70">{수사결과 보고서}</span>에 등록된 모든 내용을 대상으로 합니다.
+						</div>
+					</div>
+					<!--//E. Case 문서 전체 선택했을 때-->
+
+
+					<!--S. Case 사용자 직접입력 선택했을 때-->
+					<div class="section mt32">
+						<p class="h2 mb12">키워드 분석 대상 (사용자 직접 입력)</p>
+						<textarea class="form-control" id="" placeholder="키워드 분석대상을 입력해주세요." style="height:200px;"></textarea>
+					</div>
+					<!--//E. Case 사용자 직접입력 선택했을 때-->
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button outline lg" data-dismiss="modal">취소</button>
+					<button type="button" class="button primary lg" data-dismiss="modal">저장</button>
+					<button type="button" class="button primary lg disabled" data-dismiss="modal">저장</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //E. 문서설정 모달(문서정보 탭) > 추천키워드 등록 모달 -->
+	
+	<div class="modal-backdrop show"></div>
+
+</div>
+
+<!-- common icon, js -->
+<div id="ico_svg" data-include="../common/svg.html" style="display:none"></div>
+<script src="../../js/ui.js"></script>
+<!-- common icon, js -->
+
+</body>
+</html> 
